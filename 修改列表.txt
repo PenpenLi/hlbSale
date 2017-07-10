@@ -1,0 +1,114 @@
+
+基于引擎3.15
+
+创建:进入cocos工程目录 tools\cocos2d-console\bin 执行命令
+		cocos.bat new hlb_sale -p com.hlb.sale -l lua -d D:\hlb 
+
+修改历史:
+1. lua防止重复注册回调 LuaScriptHandlerMgr.cpp line258
+
+2. 加入cjson库 : appdelegate.cpp , frameworks\runtime-src\Classes\cjson , 
+	WIN32编译的时候会报各种错误,打开工程属性, C/C++ 页, 选项"编译为 --> "编译为C++代码(/TP)"
+
+3. csload 加载csb自动将node转换为 widget 对象，以支持 clone()方法: 
+	1)NodeReader.cpp 
+		#include "ui/UIWidget.h" //hlb
+		Node* NodeReader::createNodeWithFlatBuffers(const flatbuffers::Table *nodeOptions)
+		{
+			//Node* node = Node::create();
+			//hlb
+			ui::Widget* node = ui::Widget::create();
+	2)SingleNodeReader.cpp 
+		#include "ui/UIWidget.h" //hlb
+		Node* SingleNodeReader::createNodeWithFlatBuffers(const flatbuffers::Table *singleNodeOptions)
+		{
+			//Node* node = Node::create();
+			ui::Widget* node = ui::Widget::create();
+
+4. 添加 tolua 自动绑定工具： tools/tolua,  tools/tolua_pkg 两种方式
+
+5. 添加网络模块http, tcp : 
+	C++文件: Classes/network; lua文件: src/network; 
+
+6. 由于cocos sudio不再维护, 所以cocos2dx-3.15已经不能很好的支持cocos studio编辑的UI, 加载某些csb如textfield等
+   控件时会崩溃，而官网推荐的cocos creator 1.5使用的引擎与cocos2dx-3.15不同, 用的是cocos2dx-js来开发, fuck!!
+	解决方法:
+		如果还希望使用cocos studio来编辑UI,修改如下:
+		使用 tools/fix_csb_parse_bug/目录下的两个文件 CSParseBinary_generated.h CSParseBinary.fbs替换工程相应文件，
+		重新编译项目，此时会出现3个错误，分别调整各自函数参数的顺序，把isLocalized这个参数放到最后一个参数位置就OK了.
+
+7. 分辨率适配:
+	1)修改根目录下的config.json ：
+		init_cfg = 
+		{
+			"isLandscape": false,
+			"width": 640,
+			"height": 960,			
+		}
+		用来修改屏幕显示大小
+		
+	2)config.lua ：修改设计分辨率大小
+		CC_DESIGN_RESOLUTION = {
+			width = 720,
+			height = 1280,
+			autoscale = "FIXED_WIDTH",
+			callback = function(framesize)
+				local ratio = framesize.width / framesize.height
+				if ratio > 720/1280 then
+					-- iPad 768*1024(1536*2048) is 4:3 screen
+					return {autoscale = "FIXED_HEIGHT"}
+				end
+			end
+		}	
+		
+	3)修改src/cocos/framework/display.lua , 直接写死设计分辨率大小
+		-- if type(CC_DESIGN_RESOLUTION) == "table" then
+		--     display.setAutoScale(CC_DESIGN_RESOLUTION)
+		-- end
+		view:setDesignResolutionSize(CC_DESIGN_RESOLUTION.width, CC_DESIGN_RESOLUTION.height, cc.ResolutionPolicy.NO_BORDER)
+		setConstants() 	
+	4) cocos studio编辑UI时, 如果是全屏显示的layer，需要在根下添加一个节点scale_node, 所有其他元素都位于该节点下,
+		该节点用来在代码里统一缩放使用:
+		src/game/public/gameUtil.lua : function loadCocosUI(filename, place) 
+		
+8. 工具导数据表:  tools/excel_convertor ,将excel表生成lua和sql
+
+9. 游戏进入/退出后台在lua端处理, 通过事件通知方式: AppDelegate.cpp 
+	Director::getInstance()->getEventDispatcher()->dispatchCustomEvent("APP_ENTER_FOREGROUND_EVENT");
+	Director::getInstance()->getEventDispatcher()->dispatchCustomEvent("APP_ENTER_BACKGROUND_EVENT");
+	
+	lua端:
+	local function onAppEnterBackground() 
+	  print("=== onAppEnterBackground")
+	end 
+	local function onAppEnterForeground() 
+	  print("=== onAppEnterForeground")
+	end 
+	local listener1 = cc.EventListenerCustom:create("APP_ENTER_BACKGROUND_EVENT", onAppEnterBackground)
+	local listener2 = cc.EventListenerCustom:create("APP_ENTER_FOREGROUND_EVENT", onAppEnterForeground)
+	cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority(listener1, 1)
+	cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority(listener2, 1)	
+
+10. android打包
+	1)因为官方已经不支持使用ecplise来打包,所以使用google推荐的Android studio来打包,环境配置请参考笔记<移植到android_使用android_studio.txt>
+	2)修改Android.mk, 合入curl库(因为官方已经去掉了！) 和其他C++文件(注意，必须包含 hellolua/main.cpp,否则没入口，运行时会崩溃)
+	3)修改Application.mk 加入宏 -DANDROID (在 SimpleSocket模块中用到) 
+	4)修改横屏/竖屏设置 AndroidManifest.xml : android:screenOrientation="portrait" 
+	
+11. 图片资源加密解密
+	使用工具来对资源进行加密解密 tools\image_encrypt\img_encrypt.py 
+	
+	程序执行CCImage.cpp 时进行解密 isPng() isJpg() initWithImageFile() initWithImageFileThreadSafe() 都会用到 initWithImageData()
+	所以在initWithImageData(const unsigned char * data, ssize_t dataLen)里修改
+	
+12. lua 脚本加密, 加解密算法使用XXTEA
+	写了个工具加密脚本 tools\resource_encrypt\encrypt_lua.py 
+	
+	加密/解密所有图片和脚本则只需运行 tools\resource_encrypt\run_all.py  参数为 -encode 或 -decode
+
+	
+	
+	
+	
+
+	
