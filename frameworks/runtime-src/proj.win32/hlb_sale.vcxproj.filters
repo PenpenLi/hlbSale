@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{fc5cb953-2953-4968-83b3-39e3ff951754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32">
+      <UniqueIdentifier>{037a9a02-b906-4cc5-ad98-304acd4e25ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{2d1d0979-58cd-4ab6-b91c-13650158f1fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\cjson">
+      <UniqueIdentifier>{e6727387-06a6-4720-9550-75809956e8d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\encrypt">
+      <UniqueIdentifier>{906abe56-1a9f-4ec8-905a-519a89d54b27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\network">
+      <UniqueIdentifier>{881a7c74-b1bc-48f4-8508-fc418f004c52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\forlua">
+      <UniqueIdentifier>{ba1f5781-2ada-4aef-b58e-f55cc4c8760b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\network\http">
+      <UniqueIdentifier>{db06bacd-46ae-456c-b68d-21a102e46883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\network\tcp">
+      <UniqueIdentifier>{755dff94-794e-4450-a686-0344e455cef6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\network\tcp\simpleSocket">
+      <UniqueIdentifier>{cd9d5928-f29c-4b4e-b182-31ace5ba5194}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SimulatorWin.h" />
+    <ClInclude Include="stdafx.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cjson\fpconv.h">
+      <Filter>Classes\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cjson\lua_cjson.h">
+      <Filter>Classes\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cjson\strbuf.h">
+      <Filter>Classes\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\encrypt\aes.h">
+      <Filter>Classes\encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\encrypt\msgPack.h">
+      <Filter>Classes\encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\forLua\forLua.h">
+      <Filter>Classes\forlua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\network\http\httpNet.h">
+      <Filter>Classes\network\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\network\tcp\SimpleSocket\Host.h">
+      <Filter>Classes\network\tcp\simpleSocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\network\tcp\SimpleSocket\SimpleSocket.h">
+      <Filter>Classes\network\tcp\simpleSocket</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorWin.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cjson\fpconv.c">
+      <Filter>Classes\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cjson\lua_cjson.c">
+      <Filter>Classes\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cjson\strbuf.c">
+      <Filter>Classes\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\encrypt\aes.c">
+      <Filter>Classes\encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\encrypt\msgPack.cpp">
+      <Filter>Classes\encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\forLua\forLua.cpp">
+      <Filter>Classes\forlua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\network\http\httpNet.cpp">
+      <Filter>Classes\network\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\network\tcp\SimpleSocket\SimpleSocket.cpp">
+      <Filter>Classes\network\tcp\simpleSocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\network\tcp\NetConnectionImpl.cpp">
+      <Filter>Classes\network\tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\network\tcp\NetLua.cpp">
+      <Filter>Classes\network\tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\network\tcp\NetManager.cpp">
+      <Filter>Classes\network\tcp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\game.ico" />
+  </ItemGroup>
+</Project>
