@@ -1,0 +1,5 @@
+#资源图片的加密解密工具
+#使用方法: 
+
+1) 在 img_encrypt.py 配置图片路径 
+2) 在cmd里执行命令 img_encrypt.py -encode 或者 img_encrypt.py -decode 

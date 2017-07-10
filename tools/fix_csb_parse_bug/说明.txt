@@ -1,0 +1,6 @@
+由于cocos sudio不再维护, 所以cocos2dx-3.15已经不能很好的支持cocos studio编辑的UI, 加载某些csb如textfield等
+控件时会崩溃，而官网推荐的cocos creator 1.5使用的引擎与cocos2dx-3.15不同, 用的是cocos2dx-js来开发, fuck!!
+解决方法:
+	如果还希望使用cocos studio来编辑UI,修改如下:
+	使用 tools/fix_csb_parse_bug/目录下的两个文件 CSParseBinary_generated.h CSParseBinary.fbs替换工程相应文件，
+	重新编译项目，此时会出现3个错误，分别调整各自函数参数的顺序，把isLocalized这个参数放到最后一个参数位置就OK了.

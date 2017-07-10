@@ -1,0 +1,8 @@
+表的分类如下：
+
+Resources.xlsx : 存放图片,动画等资源动画
+item.xlsx : 道具
+Language.xlsx：其他excel表中包含的字符串需要在这里进行多语言化
+Errorcode.xlsx: 服务器错误码对应表
+导sql工具.xlsm: 组合件 Ctrl+Q 用来导出 sql 
+

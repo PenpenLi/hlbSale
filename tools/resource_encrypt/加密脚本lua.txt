@@ -1,0 +1,23 @@
+
+使用XXTEA加密Lua脚本
+
+方式1: 使用自己编写的 python 脚本：
+
+在lua_encrypt.py 中配置好路径和加解密的秘钥,签名
+
+在cmd里执行命令 lua_encrypt.py -encode 或者 lua_encrypt.py -decode 即可.
+
+
+
+
+方式2: 使用原始引擎工具：
+
+1. 需要用到cocos2dx-3.15原始引擎工程中的工具, cmd 到路径 D:\cocos2d-x-3.15\cocos2d-x-3.15\tools\cocos2d-console\bin
+	执行命令只对lua进行XXTEA加密
+	cocos luacompile -e -s D:\hlb\hlb_sale\src\ -d D:\hlb\hlb_sale\out\ -k hlbkey -b hlbsign --disable-compile
+	
+2. 在AppDelegate.cpp 中需要设置,否则无法解密lua 
+    LuaStack* stack = engine->getLuaStack();
+    stack->setXXTEAKeyAndSign("hlbkey", strlen("hlbkey"), "hlbsign", strlen("hlbsign"));
+
+	

@@ -1,0 +1,20 @@
+
+1)	目录 test_data 存放excel数据文件,包含导出sql工具:
+	为了适配多语言,各种表中包含的字符串需要在 Language.xlsx中定义;
+	导sql工具.xlsm 用来罗列所有表项, 组合件 Ctrl+Q 用来导出 sql (VBA代码编辑可通过鼠标右键点击表的标签页, 选 查看代码),
+	生成有三个目录:
+	create_sql ：各个表结构
+	sql : 各个表内容
+	update_sql: 对表中某一项数据进行修改后导出的 sql数据;
+	一般的, 当增加删除数据后,服务器需要停服更新，此时提供 create_sql/all_create.sql 和 sql/all.sql
+	这两个文件给服务器更新即可.
+  
+	当只是更新某项数据时，服务器不需要停服更新，此时提供 update_sql/目录下对应的sql文件即可.
+	
+  
+2)目录 convert_tools_new 用来导出lua 数据, 需要安装Adobe Air工具；
+	点击 excel-parse.exe , 在 添加Excel文件目录 中选择路径后，点击开始生成即可.
+	注意, sql 就不要勾选了,因为导出的sql结构有问题，按1)的方式来导出sql即可.
+	
+
+注意:使用工具时,要确保目录里的文件不要打开,否则可能会导致无法继续.
