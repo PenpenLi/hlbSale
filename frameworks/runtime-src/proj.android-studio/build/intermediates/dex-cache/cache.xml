@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\hlb\hlb_sale\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\bundles\default\libs\httpclient-4.4.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="becf40a1a480be2a5ccb46529dce490f31b516d5">
+        <dex dex="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\transforms\dex\debug\folders\1000\8\httpclient-4.4.1.1_f4ffe2d678752d0e94fa99a5c16506ff7f1380c6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9609e0e3fb430f838c0a7cd20da05fd028b71804">
+        <dex dex="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_62f3e461d650a46bfc54a954861aa6ee3479a728\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\hlb\hlb_sale\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\bundles\default\libs\com.android.vending.expansion.zipfile.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3785cbb057b995cb42463158b1a798fcc78bb3b0">
+        <dex dex="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\transforms\dex\debug\folders\1000\8\com.android.vending.expansion.zipfile_5886fb19e885c24aeb9c40f9f8d4390b6921317d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_c8032cdfe889887a5c48e2cde197d4102c924022\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\hlb\hlb_sale\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\bundles\default\libs\android-async-http-1.4.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="769f000c2940ab43578cd56ffcc81340aad0b182">
+        <dex dex="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\transforms\dex\debug\folders\1000\8\android-async-http-1.4.9_a34b3ce5197ae081fffd9f7654f11b6125d52590\classes.dex" />
+    </item>
+
+</items>
