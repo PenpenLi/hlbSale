@@ -1,0 +1,38 @@
+<Solution>
+  <PropertyGroup Name="hlb_AI" Version="2.3.2.3" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="csb">
+          <Folder Name="home">
+            <Project Name="home.csd" Type="Layer" />
+          </Folder>
+          <Folder Name="msg_box">
+            <Project Name="msg_box_toast.csd" Type="Layer" />
+            <Project Name="msg_box_popup.csd" Type="Layer" />
+          </Folder>
+        </Folder>
+        <Folder Name="ui">
+          <Folder Name="home">
+            <Image Name="bg.jpg" />
+          </Folder>
+          <Folder Name="common">
+            <Image Name="tips_bg.png" />
+            <Image Name="msg_box_bg.png" />
+            <Image Name="box_cornor.png" />
+            <Image Name="bg_text.png" />
+          </Folder>
+          <Folder Name="button">
+            <Image Name="btn_1.png" />
+            <Image Name="btn_2.png" />
+            <Image Name="btn_3.png" />
+            <Image Name="btn_4.png" />
+          </Folder>
+        </Folder>
+        <Folder Name="font">
+          <TTF Name="SIMLI.TTF" />
+        </Folder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
