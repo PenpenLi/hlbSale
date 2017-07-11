@@ -50,6 +50,18 @@
 		5200BECA1A53D9A500AC45E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5200BEC91A53D9A500AC45E4 /* Security.framework */; };
 		521A8E7019F0C3D200D177D7 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6E19F0C3D200D177D7 /* Default-667h@2x.png */; };
 		521A8E7119F0C3D200D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6F19F0C3D200D177D7 /* Default-736h@3x.png */; };
+		844AEAF01F148305005DB723 /* fpconv.c in Sources */ = {isa = PBXBuildFile; fileRef = 844AEAEA1F148305005DB723 /* fpconv.c */; };
+		844AEAF11F148305005DB723 /* lua_cjson.c in Sources */ = {isa = PBXBuildFile; fileRef = 844AEAEC1F148305005DB723 /* lua_cjson.c */; };
+		844AEAF21F148305005DB723 /* strbuf.c in Sources */ = {isa = PBXBuildFile; fileRef = 844AEAEE1F148305005DB723 /* strbuf.c */; };
+		844AEAF91F148313005DB723 /* aes.c in Sources */ = {isa = PBXBuildFile; fileRef = 844AEAF41F148313005DB723 /* aes.c */; };
+		844AEAFA1F148313005DB723 /* msgPack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844AEAF71F148313005DB723 /* msgPack.cpp */; };
+		844AEAFE1F14831B005DB723 /* forLua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844AEAFC1F14831B005DB723 /* forLua.cpp */; };
+		844AEB141F148326005DB723 /* httpNet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844AEB011F148326005DB723 /* httpNet.cpp */; };
+		844AEB151F148326005DB723 /* NetConnectionImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844AEB061F148326005DB723 /* NetConnectionImpl.cpp */; };
+		844AEB161F148326005DB723 /* NetLua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844AEB091F148326005DB723 /* NetLua.cpp */; };
+		844AEB171F148326005DB723 /* NetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844AEB0B1F148326005DB723 /* NetManager.cpp */; };
+		844AEB181F148326005DB723 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 844AEB0F1F148326005DB723 /* ReadMe.txt */; };
+		844AEB191F148326005DB723 /* SimpleSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844AEB101F148326005DB723 /* SimpleSocket.cpp */; };
 		9FA3AE4E1BE9BCC900FC9645 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA3AE4D1BE9BCC900FC9645 /* CFNetwork.framework */; };
 		9FF504841A5E87B100AFDA55 /* ConsoleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF504811A5E87B100AFDA55 /* ConsoleWindow.xib */; };
 		9FF504851A5E87B100AFDA55 /* ConsoleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF504831A5E87B100AFDA55 /* ConsoleWindowController.m */; };
@@ -126,6 +138,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = A07A4C241783777C0073F6A7;
 			remoteInfo = "libcocos2d iOS";
+		};
+		844AEADE1F148281005DB723 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15A8A4031834BDA200142BE0 /* cocos2d_libs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 507B40FD1C31BDD30067B53E;
+			remoteInfo = "libcocos2d tvOS";
+		};
+		844AEAE11F148281005DB723 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C03781AE18BF654500FE4F13 /* cocos2d_lua_bindings.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 507B43531C31FA0C0067B53E;
+			remoteInfo = "libluacocos2d tvOS";
 		};
 		9FEE0E431A5FC95000FEA1B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -207,6 +233,36 @@
 		5200BEC91A53D9A500AC45E4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		521A8E6E19F0C3D200D177D7 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		521A8E6F19F0C3D200D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
+		844AEAEA1F148305005DB723 /* fpconv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fpconv.c; sourceTree = "<group>"; };
+		844AEAEB1F148305005DB723 /* fpconv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fpconv.h; sourceTree = "<group>"; };
+		844AEAEC1F148305005DB723 /* lua_cjson.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lua_cjson.c; sourceTree = "<group>"; };
+		844AEAED1F148305005DB723 /* lua_cjson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_cjson.h; sourceTree = "<group>"; };
+		844AEAEE1F148305005DB723 /* strbuf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strbuf.c; sourceTree = "<group>"; };
+		844AEAEF1F148305005DB723 /* strbuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strbuf.h; sourceTree = "<group>"; };
+		844AEAF41F148313005DB723 /* aes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes.c; sourceTree = "<group>"; };
+		844AEAF51F148313005DB723 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		844AEAF61F148313005DB723 /* imgEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgEncrypt.h; sourceTree = "<group>"; };
+		844AEAF71F148313005DB723 /* msgPack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = msgPack.cpp; sourceTree = "<group>"; };
+		844AEAF81F148313005DB723 /* msgPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msgPack.h; sourceTree = "<group>"; };
+		844AEAFC1F14831B005DB723 /* forLua.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = forLua.cpp; sourceTree = "<group>"; };
+		844AEAFD1F14831B005DB723 /* forLua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forLua.h; sourceTree = "<group>"; };
+		844AEB011F148326005DB723 /* httpNet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = httpNet.cpp; sourceTree = "<group>"; };
+		844AEB021F148326005DB723 /* httpNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = httpNet.h; sourceTree = "<group>"; };
+		844AEB041F148326005DB723 /* CAutoLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAutoLock.h; sourceTree = "<group>"; };
+		844AEB051F148326005DB723 /* NetCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetCommon.h; sourceTree = "<group>"; };
+		844AEB061F148326005DB723 /* NetConnectionImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetConnectionImpl.cpp; sourceTree = "<group>"; };
+		844AEB071F148326005DB723 /* NetConnectionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetConnectionImpl.h; sourceTree = "<group>"; };
+		844AEB081F148326005DB723 /* NetConnetionInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetConnetionInterface.h; sourceTree = "<group>"; };
+		844AEB091F148326005DB723 /* NetLua.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetLua.cpp; sourceTree = "<group>"; };
+		844AEB0A1F148326005DB723 /* NetLua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetLua.h; sourceTree = "<group>"; };
+		844AEB0B1F148326005DB723 /* NetManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetManager.cpp; sourceTree = "<group>"; };
+		844AEB0C1F148326005DB723 /* NetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetManager.h; sourceTree = "<group>"; };
+		844AEB0E1F148326005DB723 /* Host.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Host.h; sourceTree = "<group>"; };
+		844AEB0F1F148326005DB723 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		844AEB101F148326005DB723 /* SimpleSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleSocket.cpp; sourceTree = "<group>"; };
+		844AEB111F148326005DB723 /* SimpleSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSocket.h; sourceTree = "<group>"; };
+		844AEB121F148326005DB723 /* StatTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatTimer.h; sourceTree = "<group>"; };
+		844AEB131F148326005DB723 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		9FA3AE4D1BE9BCC900FC9645 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		9FF504781A5E86D600AFDA55 /* libsimulator.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libsimulator.xcodeproj; path = "../../cocos2d-x/tools/simulator/libsimulator/proj.ios_mac/libsimulator.xcodeproj"; sourceTree = "<group>"; };
 		9FF504811A5E87B100AFDA55 /* ConsoleWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsoleWindow.xib; sourceTree = "<group>"; };
@@ -294,6 +350,7 @@
 			children = (
 				15A8A4171834BDA200142BE0 /* libcocos2d Mac.a */,
 				15A8A4251834BDA200142BE0 /* libcocos2d iOS.a */,
+				844AEADF1F148281005DB723 /* libcocos2d tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -355,6 +412,92 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
+		844AEAE91F148305005DB723 /* cjson */ = {
+			isa = PBXGroup;
+			children = (
+				844AEAEA1F148305005DB723 /* fpconv.c */,
+				844AEAEB1F148305005DB723 /* fpconv.h */,
+				844AEAEC1F148305005DB723 /* lua_cjson.c */,
+				844AEAED1F148305005DB723 /* lua_cjson.h */,
+				844AEAEE1F148305005DB723 /* strbuf.c */,
+				844AEAEF1F148305005DB723 /* strbuf.h */,
+			);
+			name = cjson;
+			path = ../Classes/cjson;
+			sourceTree = "<group>";
+		};
+		844AEAF31F148313005DB723 /* encrypt */ = {
+			isa = PBXGroup;
+			children = (
+				844AEAF41F148313005DB723 /* aes.c */,
+				844AEAF51F148313005DB723 /* aes.h */,
+				844AEAF61F148313005DB723 /* imgEncrypt.h */,
+				844AEAF71F148313005DB723 /* msgPack.cpp */,
+				844AEAF81F148313005DB723 /* msgPack.h */,
+			);
+			name = encrypt;
+			path = ../Classes/encrypt;
+			sourceTree = "<group>";
+		};
+		844AEAFB1F14831B005DB723 /* forLua */ = {
+			isa = PBXGroup;
+			children = (
+				844AEAFC1F14831B005DB723 /* forLua.cpp */,
+				844AEAFD1F14831B005DB723 /* forLua.h */,
+			);
+			name = forLua;
+			path = ../Classes/forLua;
+			sourceTree = "<group>";
+		};
+		844AEAFF1F148326005DB723 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				844AEB001F148326005DB723 /* http */,
+				844AEB031F148326005DB723 /* tcp */,
+			);
+			name = network;
+			path = ../Classes/network;
+			sourceTree = "<group>";
+		};
+		844AEB001F148326005DB723 /* http */ = {
+			isa = PBXGroup;
+			children = (
+				844AEB011F148326005DB723 /* httpNet.cpp */,
+				844AEB021F148326005DB723 /* httpNet.h */,
+			);
+			path = http;
+			sourceTree = "<group>";
+		};
+		844AEB031F148326005DB723 /* tcp */ = {
+			isa = PBXGroup;
+			children = (
+				844AEB041F148326005DB723 /* CAutoLock.h */,
+				844AEB051F148326005DB723 /* NetCommon.h */,
+				844AEB061F148326005DB723 /* NetConnectionImpl.cpp */,
+				844AEB071F148326005DB723 /* NetConnectionImpl.h */,
+				844AEB081F148326005DB723 /* NetConnetionInterface.h */,
+				844AEB091F148326005DB723 /* NetLua.cpp */,
+				844AEB0A1F148326005DB723 /* NetLua.h */,
+				844AEB0B1F148326005DB723 /* NetManager.cpp */,
+				844AEB0C1F148326005DB723 /* NetManager.h */,
+				844AEB0D1F148326005DB723 /* SimpleSocket */,
+				844AEB131F148326005DB723 /* Singleton.h */,
+			);
+			path = tcp;
+			sourceTree = "<group>";
+		};
+		844AEB0D1F148326005DB723 /* SimpleSocket */ = {
+			isa = PBXGroup;
+			children = (
+				844AEB0E1F148326005DB723 /* Host.h */,
+				844AEB0F1F148326005DB723 /* ReadMe.txt */,
+				844AEB101F148326005DB723 /* SimpleSocket.cpp */,
+				844AEB111F148326005DB723 /* SimpleSocket.h */,
+				844AEB121F148326005DB723 /* StatTimer.h */,
+			);
+			path = SimpleSocket;
+			sourceTree = "<group>";
+		};
 		9FF504791A5E86D600AFDA55 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +512,7 @@
 			children = (
 				15427CC2198F220600DC375D /* libluacocos2d Mac.a */,
 				15427CD2198F220600DC375D /* libluacocos2d iOS.a */,
+				844AEAE21F148281005DB723 /* libluacocos2d tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -379,9 +523,9 @@
 				9FF504781A5E86D600AFDA55 /* libsimulator.xcodeproj */,
 				C03781AE18BF654500FE4F13 /* cocos2d_lua_bindings.xcodeproj */,
 				15A8A4031834BDA200142BE0 /* cocos2d_libs.xcodeproj */,
+				F293BB7C15EB830F00256477 /* Classes */,
 				5023810617EBBCAC00990C9B /* ios */,
 				5023817117EBBE3400990C9B /* mac */,
-				F293BB7C15EB830F00256477 /* Classes */,
 				F293B3CB15EB7BE500256477 /* Frameworks */,
 				F293B3C915EB7BE500256477 /* Products */,
 				F293BC4615EB859D00256477 /* Resources */,
@@ -431,6 +575,10 @@
 		F293BB7C15EB830F00256477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				844AEAFF1F148326005DB723 /* network */,
+				844AEAFB1F14831B005DB723 /* forLua */,
+				844AEAF31F148313005DB723 /* encrypt */,
+				844AEAE91F148305005DB723 /* cjson */,
 				15427CE2198F237300DC375D /* lua_module_register.h */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
 				F293BB7F15EB831F00256477 /* AppDelegate.h */,
@@ -565,6 +713,20 @@
 			remoteRef = 15A8A4241834BDA200142BE0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		844AEADF1F148281005DB723 /* libcocos2d tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libcocos2d tvOS.a";
+			remoteRef = 844AEADE1F148281005DB723 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		844AEAE21F148281005DB723 /* libluacocos2d tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libluacocos2d tvOS.a";
+			remoteRef = 844AEAE11F148281005DB723 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9FF5047E1A5E86D600AFDA55 /* libsimulator Mac.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -617,6 +779,7 @@
 				5023811A17EBBCAC00990C9B /* Default.png in Resources */,
 				C03781BB18BF655400FE4F13 /* src in Resources */,
 				5091733817ECE17A00D62437 /* Icon-50.png in Resources */,
+				844AEB181F148326005DB723 /* ReadMe.txt in Resources */,
 				5023812117EBBCAC00990C9B /* Icon-72.png in Resources */,
 				C05D1C121923449100B808A4 /* config.json in Resources */,
 				521A8E7119F0C3D200D177D7 /* Default-736h@3x.png in Resources */,
@@ -659,8 +822,19 @@
 			files = (
 				5023812517EBBCAC00990C9B /* RootViewController.mm in Sources */,
 				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
+				844AEB141F148326005DB723 /* httpNet.cpp in Sources */,
+				844AEAF21F148305005DB723 /* strbuf.c in Sources */,
 				5023812417EBBCAC00990C9B /* main.m in Sources */,
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
+				844AEAF11F148305005DB723 /* lua_cjson.c in Sources */,
+				844AEB171F148326005DB723 /* NetManager.cpp in Sources */,
+				844AEB161F148326005DB723 /* NetLua.cpp in Sources */,
+				844AEAFA1F148313005DB723 /* msgPack.cpp in Sources */,
+				844AEAF01F148305005DB723 /* fpconv.c in Sources */,
+				844AEB191F148326005DB723 /* SimpleSocket.cpp in Sources */,
+				844AEAFE1F14831B005DB723 /* forLua.cpp in Sources */,
+				844AEAF91F148313005DB723 /* aes.c in Sources */,
+				844AEB151F148326005DB723 /* NetConnectionImpl.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,14 +1020,17 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					IOS,
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../Classes/protobuf-lite",
 					"$(SRCROOT)/../Classes",
 					"$(SRCROOT)/../../cocos2d-x/tools/simulator/libsimulator/lib",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
@@ -870,7 +1047,7 @@
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END) $(SRCROOT)/../../cocos2d-x/external/curl/include/ios";
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
@@ -884,14 +1061,17 @@
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					IOS,
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../Classes/protobuf-lite",
 					"$(SRCROOT)/../Classes",
 					"$(SRCROOT)/../../cocos2d-x/tools/simulator/libsimulator/lib",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
@@ -908,7 +1088,7 @@
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END) $(SRCROOT)/../../cocos2d-x/external/curl/include/ios";
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
