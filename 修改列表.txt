@@ -13,7 +13,7 @@
 3. csload 加载csb自动将node转换为 widget 对象，以支持 clone()方法: 
 	1)NodeReader.cpp 
 		#include "ui/UIWidget.h" //hlb
-		Node* NodeReader::createNodeWithFlatBuffers(const flatbuffers::Table *nodeOptions)
+		Node* NodeReasimder::createNodeWithFlatBuffers(const flatbuffers::Table *nodeOptions)
 		{
 			//Node* node = Node::create();
 			//hlb
@@ -107,8 +107,21 @@
 	加密/解密所有图片和脚本则只需运行 tools\resource_encrypt\run_all.py  参数为 -encode 或 -decode
 
 	
+13. IOS打包
+	1）将项目中Classes中源码拖到xcode工程的Classes目录下
+
+	2）定义宏 IOS ，在simple socket中会用到：
+	在Xcode中选中工程 hlb_sale 在Build Setting/Apple LLVM7.1 -Preprocesing/Preprocessor Macros 新增宏 IOS
+
+	3）增加curl模块，包括库和头文件设置：
+	在Xcode中选中工程 cocos2d_libs.xcodeproj, 在右边 TARGETS列表中包含 libcocos2d Mac和libcocos2d iOS, 分别选中后在右边的 Build 	Phases/Link Binary With Libraries添加libcurl.a，
+	在目录 frameworks/cocos2d-x/external/curl/prebuilt/下对应有mac和iOS连个版本的lib curl.a
+
+	头文件：在Xcode中选中工程 hlb_sale 在Build Setting/Search Paths/User Header Search Paths下添加目录$(SRCROOT)/../../cocos2d-	x/external/curl/include/ios
 	
-	
+	4）横竖屏设置
+	在Xcode中选中工程 hlb_sale 在General/Deployment Info/Device Orientation勾选Portrait即可竖屏显示
+
 	
 
 	
