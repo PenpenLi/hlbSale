@@ -73,7 +73,7 @@ typedef struct NetHeaderData
     NetHeaderData() :msgId(0),szBody(0){ memset(strTag, 0, sizeof(strTag)); };
     char strTag[4];
     int msgId;
-    int szBody;
+    unsigned szBody;
     
 } NetHeaderData;
 #pragma pack()
