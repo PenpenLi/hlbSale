@@ -1,6 +1,6 @@
-local busyTip = {}
-setmetatable(busyTip,{__index = _G})
-setfenv(1,busyTip)
+local BusyTip = {}
+setmetatable(BusyTip,{__index = _G})
+setfenv(1,BusyTip)
 
 local m_Tip_1 = nil
 
@@ -41,4 +41,4 @@ end
 
 
 
-return busyTip
+return BusyTip

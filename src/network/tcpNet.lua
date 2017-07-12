@@ -1,7 +1,7 @@
 
-local tcpNet = {}
-setmetatable(tcpNet,{__index = _G})
-setfenv(1, tcpNet)
+local TcpNet = {}
+setmetatable(TcpNet,{__index = _G})
+setfenv(1, TcpNet)
 
 
 --说明：
@@ -14,7 +14,7 @@ setfenv(1, tcpNet)
 --]]
 
 
---tcpNetNotifyEnum of "NetCommon.h"
+--TcpNetNotifyEnum of "NetCommon.h"
 local NotifyConnectingLoginServerFail = 200002
 local NotifyConnectedLoginServer      = 200003
 local NotifyConnectingGameServerFail  = 200004
@@ -203,7 +203,7 @@ function keepAlive()
 
       if m_heartBeatTimeoutCount > m_maxHeartBeatTimeoutCount then
         print("heart beat: send disconnect req")
-        sendReq(ReqDisconnect) --tcpNetManager will change to disconnecting state, then game server task break, and notify user
+        sendReq(ReqDisconnect) --TcpNetManager will change to disconnecting state, then game server task break, and notify user
       end
     else
       m_heartBeatTimeoutCount = 0
@@ -230,7 +230,7 @@ end
 
 
 function loop()
-  print("tcpNet.loop")
+  print("TcpNet.loop")
   local scheduler = cc.Director:getInstance():getScheduler()
   if m_loopTimerId then 
     scheduler:unscheduleScriptEntry(m_loopTimerId) 
@@ -264,7 +264,7 @@ function startHeartBeat()
   end 
   
   m_heartBeatTimerId = scheduler:scheduleScriptFunc(keepAlive, m_heartBeatInterval, false)
-  registMsgCallback(g_consts.NetMsg.HeartBeatRsp, tcpNet, onRecvHeartBeatRsp)
+  registMsgCallback(g_consts.NetMsg.HeartBeatRsp, TcpNet, onRecvHeartBeatRsp)
 end 
 
 function pause()
@@ -288,4 +288,4 @@ function setConnectState(isConnected)
   m_isConnected = isConnected 
 end 
 
-return tcpNet 
+return TcpNet 

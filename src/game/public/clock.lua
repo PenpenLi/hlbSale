@@ -1,7 +1,7 @@
 
-local clock = {}
-setmetatable(clock,{__index = _G})
-setfenv(1,clock)
+local Clock = {}
+setmetatable(Clock,{__index = _G})
+setfenv(1,Clock)
 
 
 local timeDelta      = 0  --与服务器时间偏移量
@@ -120,4 +120,4 @@ function isTimeCollated()
   return m_collatedFlag 
 end 
 
-return clock
+return Clock

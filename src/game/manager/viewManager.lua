@@ -1,7 +1,7 @@
 
-local viewManager = {}
-setmetatable(viewManager,{__index = _G})
-setfenv(1,viewManager)
+local ViewManager = {}
+setmetatable(ViewManager,{__index = _G})
+setfenv(1,ViewManager)
 
 local mLayerRoot 
 local layerEnum = {
@@ -97,4 +97,4 @@ end
 
 
 
-return viewManager
+return ViewManager

@@ -1,7 +1,7 @@
 
-local shader = {}
-setmetatable(shader,{__index = _G})
-setfenv(1,shader)
+local Shader = {}
+setmetatable(Shader,{__index = _G})
+setfenv(1,Shader)
 
 --这里是还原着色器,但并不是所有还原都是这个,如果自己有把握请自己设置
 --一般来说UIImageView里面是Scale9Sprite,最里面有9个Sprite是用这个
@@ -43,4 +43,4 @@ end
 
 registerShader()
 
-return shader
+return Shader

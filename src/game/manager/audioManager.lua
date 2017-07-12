@@ -1,7 +1,7 @@
 
-local audioManager = {}
-setmetatable(audioManager,{__index = _G})
-setfenv(1,audioManager)
+local AudioManager = {}
+setmetatable(AudioManager,{__index = _G})
+setfenv(1,AudioManager)
 
 
 local mOpenMusic = true
@@ -201,4 +201,4 @@ function onWillEnterForeground()
 end
 
 
-return audioManager
+return AudioManager

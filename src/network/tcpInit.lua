@@ -1,7 +1,7 @@
 
-local tcpInit = {}
-setmetatable(tcpInit,{__index = _G})
-setfenv(1,tcpInit)
+local TcpInit = {}
+setmetatable(TcpInit,{__index = _G})
+setfenv(1,TcpInit)
 
 local delayConnectTimer 
 
@@ -75,12 +75,12 @@ function tcpNetInit()
 
     g_tcp.setGameServerAddr(host, port)
     g_tcp.connect()
-    g_tcp.registNotifyHandler(g_tcp.notifyConnectedGameServer, tcpInit, onConnectedGameServer)
-    g_tcp.registNotifyHandler(g_tcp.notifyDisconnected, tcpInit, onDisconnectedGameServer)
-    g_tcp.registNotifyHandler(g_tcp.notifyConnectingGameServerFail, tcpInit, onDisconnectedGameServer)
+    g_tcp.registNotifyHandler(g_tcp.notifyConnectedGameServer, TcpInit, onConnectedGameServer)
+    g_tcp.registNotifyHandler(g_tcp.notifyDisconnected, TcpInit, onDisconnectedGameServer)
+    g_tcp.registNotifyHandler(g_tcp.notifyConnectingGameServerFail, TcpInit, onDisconnectedGameServer)
 
-    g_tcp.registMsgCallback(g_consts.NetMsg.LoginRsp, tcpInit, onLoginRsp)
-    g_tcp.registMsgCallback(g_consts.NetMsg.ServerPushRsp, tcpInit, onRecvPushRsp) 
+    g_tcp.registMsgCallback(g_consts.NetMsg.LoginRsp, TcpInit, onLoginRsp)
+    g_tcp.registMsgCallback(g_consts.NetMsg.ServerPushRsp, TcpInit, onRecvPushRsp) 
   end 
 end 
 
@@ -91,4 +91,4 @@ end
 
 
 
-return tcpInit 
+return TcpInit 

@@ -3,7 +3,7 @@ cc.FileUtils:getInstance():setPopupNotify(false)
 
 require "config"
 require "cocos.init"
-require "game.initGloable"
+require "game.InitGloable"
 
 math.randomseed(os.time())
 

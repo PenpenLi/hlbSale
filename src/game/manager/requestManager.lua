@@ -1,6 +1,6 @@
-local requestManager = {}
-setmetatable(requestManager,{__index = _G})
-setfenv(1,requestManager)
+local RequestManager = {}
+setmetatable(RequestManager,{__index = _G})
+setfenv(1,RequestManager)
 
 
 
@@ -45,4 +45,4 @@ function RequestDataIndex(dataList)
 end
 
 
-return requestManager
+return RequestManager

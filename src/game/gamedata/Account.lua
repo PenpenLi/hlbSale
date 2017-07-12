@@ -1,7 +1,7 @@
 
-local account = {}
-setmetatable(account,{__index = _G})
-setfenv(1,account)
+local Account = {}
+setmetatable(Account,{__index = _G})
+setfenv(1,Account)
 
 
 
@@ -10,4 +10,4 @@ setfenv(1,account)
 
 
 
-return account 
+return Account 

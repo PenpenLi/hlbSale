@@ -1,16 +1,16 @@
 
-local resManager = {}
-setmetatable(resManager,{__index = _G})
-setfenv(1,resManager)
+local ResManager = {}
+setmetatable(ResManager,{__index = _G})
+setfenv(1,ResManager)
 
 
-function resManager.getSpritePath(id)
+function ResManager.getSpritePath(id)
   local resInfo = g_data.sprite[tonumber(id)]
   assert(resInfo,"cannot found res info by id:"..id)
   return resInfo.path
 end
 
-function resManager.getSprite(id)
+function ResManager.getSprite(id)
   local resInfo = g_data.sprite[tonumber(id)]
   assert(resInfo,"cannot found res info by id:"..id)
 
@@ -74,4 +74,4 @@ end
 
 
 
-return resManager
+return ResManager

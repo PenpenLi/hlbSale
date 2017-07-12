@@ -1,6 +1,6 @@
-local poorNetworkTip = {}
-setmetatable(poorNetworkTip,{__index = _G})
-setfenv(1,poorNetworkTip)
+local PoorNetworkTip = {}
+setmetatable(PoorNetworkTip,{__index = _G})
+setfenv(1,PoorNetworkTip)
 
 local m_poor_tip = nil
 
@@ -34,4 +34,4 @@ end
 
 
 
-return poorNetworkTip
+return PoorNetworkTip

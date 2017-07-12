@@ -1,8 +1,8 @@
 
 
-local httpNet = {}
-setmetatable(httpNet,{__index = _G})
-setfenv(1,httpNet)
+local HttpNet = {}
+setmetatable(HttpNet,{__index = _G})
+setfenv(1,HttpNet)
 
 --[[ 
 example:
@@ -15,14 +15,14 @@ example:
       print("result:", result) 
       dump(data)     
     end 
-    httpNet.postData("/dev/testPost/", tbl, test2)
+    HttpNet.postData("/dev/testPost/", tbl, test2)
 --]]
 
 
--- function httpNet.getUUID()
---     httpNet._UUID = g_Account.getUserPlatformUid().."_"..g_Account.getChannel()
---     httpNet._UUIDMd5 = PSDeviceInfo:getMD5String(httpNet._UUID)
---     return httpNet._UUID, httpNet._UUIDMd5
+-- function HttpNet.getUUID()
+--     HttpNet._UUID = g_Account.getUserPlatformUid().."_"..g_Account.getChannel()
+--     HttpNet._UUIDMd5 = PSDeviceInfo:getMD5String(HttpNet._UUID)
+--     return HttpNet._UUID, HttpNet._UUIDMd5
 -- end 
 
 
@@ -31,7 +31,7 @@ example:
 --jsonTbl:发送给服务器的json数据(lua table 格式)
 --callback: 用户回调, 返回json数据(lua table 格式)
 --useAsync: 是否异步
-function httpNet.postData(method, jsonTbl, callback , useAsync)
+function HttpNet.postData(method, jsonTbl, callback , useAsync)
 	-- if g_msgBox.isShowOffLine() == true 
 	-- 	or g_msgBox.isShowVersionOffLine() == true 
 	-- 	or g_msgBox.isShowDisableUser() == true 
@@ -47,7 +47,7 @@ function httpNet.postData(method, jsonTbl, callback , useAsync)
     end 
     
     jsonTbl = jsonTbl or {}
-    -- jsonTbl.uuid, jsonTbl.hashCode = httpNet.getUUID() 
+    -- jsonTbl.uuid, jsonTbl.hashCode = HttpNet.getUUID() 
     -- jsonTbl.game_version = g_gameVersionServer
     -- jsonTbl.login_hashcode = g_Account.getLoginHashCode()
     -- jsonTbl.timestamp = g_clock.getCurServerTime() 
@@ -138,9 +138,9 @@ function httpNet.postData(method, jsonTbl, callback , useAsync)
 
     --对参数进行MD5,防止被恶意篡改
     -- para = para .. "@" .. PSDeviceInfo:getMD5String(para) 
-    -- url = url .. "?uuid="..httpNet.getUUID()
-	httpNet:getInstance():Post2(url, para, string.len(para), onMsgReq, 12, 12, (useAsync and true or false), true) 
+    -- url = url .. "?uuid="..HttpNet.getUUID()
+	HttpNet:getInstance():Post2(url, para, string.len(para), onMsgReq, 12, 12, (useAsync and true or false), true) 
 end 
 
 
-return httpNet 
+return HttpNet 

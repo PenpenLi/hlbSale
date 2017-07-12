@@ -1,14 +1,14 @@
 
-local gameManager = {}
-setmetatable(gameManager,{__index = _G})
-setfenv(1,gameManager)
+local GameManager = {}
+setmetatable(GameManager,{__index = _G})
+setfenv(1,GameManager)
 
 --重启游戏
 function reStartGame()
   print("reStartGame")
 
   g_resManager.removeAllCocosAniFileInfo()
-  require("network.tcpInit").tcpNetDeinit()
+  require("network.TcpInit").tcpNetDeinit()
 
   for path, tmp in pairs(package.loaded) do 
     if string.find(path, "cocos%.") == 1 then 
@@ -70,4 +70,4 @@ cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority
 
 
 
-return gameManager
+return GameManager

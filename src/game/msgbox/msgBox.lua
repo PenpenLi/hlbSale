@@ -1,12 +1,12 @@
-local msgBox = {}
-setmetatable(msgBox,{__index = _G})
-setfenv(1,msgBox)
+local MsgBox = {}
+setmetatable(MsgBox,{__index = _G})
+setfenv(1,MsgBox)
 
 
 local function _create(text, title, colorType, callback, btnType, btnStr)
   local widget = g_gameUtil.loadCocosUI("csb/msg_box/msg_box_popup.csb", 5)
   local scale_node =  widget:getChildByName("scale_node") 
-  scale_node:getChildByName("Text_1"):setString(title or g_tr("msgBox_system"))
+  scale_node:getChildByName("Text_1"):setString(title or g_tr("MsgBox_system"))
 
   local scale_node = widget:getChildByName("scale_node")
   uiText = scale_node:getChildByName("Text_2")
@@ -58,8 +58,8 @@ local function _create(text, title, colorType, callback, btnType, btnStr)
     btn1:setPositionX(0)
     btn2:setVisible(false) 
   end 
-  btn1:setTitleText(g_tr("msgBox_ok"))
-  btn2:setTitleText(g_tr("msgBox_cancle"))
+  btn1:setTitleText(g_tr("MsgBox_ok"))
+  btn2:setTitleText(g_tr("MsgBox_cancle"))
 
   if btnStr and type(btnStr)=="table" then
     if btnStr.str1 then 
@@ -118,29 +118,29 @@ end
 
 --网络状况不好的专用弹出窗口
 function showNetError()
-  showTop(g_tr("msgBox_netError"))
+  showTop(g_tr("MsgBox_netError"))
 end 
 
 --网络请求数据错误的专用弹出窗口
 function showNetDataError()
-  showTop(g_tr("msgBox_netDataError"))
+  showTop(g_tr("MsgBox_netDataError"))
 end 
 
 --被挤下线专用弹出窗口
 function showOffLine()
-  showTop(g_tr("msgBox_offLine"), function() g_gameManager.reStartGame() end) 
+  showTop(g_tr("MsgBox_offLine"), function() g_gameManager.reStartGame() end) 
 end 
 
 --强制下线更新弹出窗口
 function showVersionOffLine()
   httpNet:getInstance():discardAllPost() 
-  showTop(g_tr("msgBox_versionOffLine"), function() g_gameManager.reStartGame() end) 
+  showTop(g_tr("MsgBox_versionOffLine"), function() g_gameManager.reStartGame() end) 
 end 
 
 --被封号以后强制下线弹出窗口
 function showDisableUser()
   httpNet:getInstance():discardAllPost() 
-  showTop(g_tr("msgBox_disableUser"), function() g_gameManager.reStartGame() end) 
+  showTop(g_tr("MsgBox_disableUser"), function() g_gameManager.reStartGame() end) 
 end 
 
-return msgBox
+return MsgBox
