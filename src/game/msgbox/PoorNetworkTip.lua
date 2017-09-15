@@ -12,7 +12,7 @@ function show()
 
   local armature, animation = g_gameTools.LoadCocosAni(
 		"anime/WiFi/WiFi.ExportJson"
-		, "WiFi"
+		,"WiFi"
 		-- , onMovementEventCallFunc
 		--, onFrameEventCallFunc
 		)

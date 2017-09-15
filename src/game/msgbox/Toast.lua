@@ -31,7 +31,7 @@ end
 --参数： textColorType: 不传为默认类型(白色), 1为成功类型(绿色) ,2为警告(黄色) ,3为错误(红色)
 
 function show(text, textColorType)
-  local widget = g_gameUtil.loadCocosUI("csb/msg_box/msg_box_Toast.csb", 5)
+  local widget = g_gameTool.loadCocosUI("csb/msg_box/msg_box_Toast.csb", 5)
   local uiText = widget:getChildByName("scale_node"):getChildByName("Text_1") 
   uiText:setString(text and text or "")
 

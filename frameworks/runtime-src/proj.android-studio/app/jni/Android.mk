@@ -12,13 +12,14 @@ LOCAL_SRC_FILES := \
 ../../../Classes/network/tcp/NetManager.cpp \
 ../../../Classes/network/tcp/NetConnectionImpl.cpp \
 ../../../Classes/network/tcp/NetLua.cpp \
-../../../Classes/network/http/httpNet.cpp \
+../../../Classes/network/http/HttpNet.cpp \
 ../../../Classes/forLua/forLua.cpp \
 ../../../Classes/encrypt/aes.c \
 ../../../Classes/encrypt/msgPack.cpp \
 ../../../Classes/cjson/fpconv.c \
 ../../../Classes/cjson/lua_cjson.c \
 ../../../Classes/cjson/strbuf.c \
+../../../Classes/common/GameUtil.cpp \
 hellolua/main.cpp
 
 

@@ -36,7 +36,8 @@
 		如果还希望使用cocos studio来编辑UI,修改如下:
 		使用 tools/fix_csb_parse_bug/目录下的两个文件 CSParseBinary_generated.h CSParseBinary.fbs替换工程相应文件，
 		重新编译项目，此时会出现3个错误，分别调整各自函数参数的顺序，把isLocalized这个参数放到最后一个参数位置就OK了.
-
+	当前使用 cocos studio V2.3.2版本
+	
 7. 分辨率适配:
 	1)修改根目录下的config.json ：
 		init_cfg = 
@@ -98,8 +99,8 @@
 11. 图片资源加密解密
 	使用工具来对资源进行加密解密 tools\image_encrypt\img_encrypt.py 
 	
-	程序执行CCImage.cpp 时进行解密 isPng() isJpg() initWithImageFile() initWithImageFileThreadSafe() 都会用到 initWithImageData()
-	所以在initWithImageData(const unsigned char * data, ssize_t dataLen)里修改
+	程序执行 CCImage.cpp 时进行解密 isPng() isJpg() initWithImageFile() initWithImageFileThreadSafe() 都会用到 initWithImageData()
+	所以在 initWithImageData(const unsigned char * data, ssize_t dataLen)里修改
 	
 12. lua 脚本加密, 加解密算法使用XXTEA
 	写了个工具加密脚本 tools\resource_encrypt\encrypt_lua.py 

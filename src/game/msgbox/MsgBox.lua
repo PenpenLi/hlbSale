@@ -4,9 +4,9 @@ setfenv(1,MsgBox)
 
 
 local function _create(text, title, colorType, callback, btnType, btnStr)
-  local widget = g_gameUtil.loadCocosUI("csb/msg_box/msg_box_popup.csb", 5)
+  local widget = g_gameTool.loadCocosUI("csb/msg_box/msg_box_popup.csb", 5)
   local scale_node =  widget:getChildByName("scale_node") 
-  scale_node:getChildByName("Text_1"):setString(title or g_tr("MsgBox_system"))
+  scale_node:getChildByName("Text_1"):setString(title or g_tr("msgBox_system"))
 
   local scale_node = widget:getChildByName("scale_node")
   uiText = scale_node:getChildByName("Text_2")
@@ -31,7 +31,7 @@ local function _create(text, title, colorType, callback, btnType, btnStr)
   
   local function onButtonOK(sender, eventType)
     if open_animation_completed then
-      g_audioManage.playEffect(g_consts.AudioPath.EffectConfirm)
+      g_audioManager.playEffect(g_consts.AudioPath.EffectConfirm)
       widget:removeFromParent()
       if(callback and type(callback)=="function")then
         callback(0)
@@ -41,7 +41,7 @@ local function _create(text, title, colorType, callback, btnType, btnStr)
   
   local function onButtonCancle(sender, eventType)
     if open_animation_completed then
-      g_audioManage.playEffect(g_consts.AudioPath.EffectCancel)
+      g_audioManager.playEffect(g_consts.AudioPath.EffectCancel)
       widget:removeFromParent()
       if(callback and type(callback)=="function")then
         callback(1)
@@ -58,8 +58,8 @@ local function _create(text, title, colorType, callback, btnType, btnStr)
     btn1:setPositionX(0)
     btn2:setVisible(false) 
   end 
-  btn1:setTitleText(g_tr("MsgBox_ok"))
-  btn2:setTitleText(g_tr("MsgBox_cancle"))
+  btn1:setTitleText(g_tr("msgBox_ok"))
+  btn2:setTitleText(g_tr("msgBox_cancle"))
 
   if btnStr and type(btnStr)=="table" then
     if btnStr.str1 then 
@@ -91,7 +91,9 @@ end
 
 
 --顶层弹窗只存在一个,并且是在最高层,超过新手引导
-local m_isTopBoxExist = false
+local m_isTopBoxExist = false 
+local m_curBoxFlag = 0  --1:showOffLine  2:showVersionOffLine 3:showDisableUser
+
 function showTop(str, callback)
 
   if m_isTopBoxExist == true then return end 
@@ -109,6 +111,7 @@ function showTop(str, callback)
       m_isTopBoxExist = true
     elseif eventType == "exit" then
       m_isTopBoxExist = false
+      m_boxFlag = 0 
     end 
   end
   local node = _create(str, nil, nil, callbackFunc)
@@ -118,29 +121,36 @@ end
 
 --网络状况不好的专用弹出窗口
 function showNetError()
-  showTop(g_tr("MsgBox_netError"))
+  showTop(g_tr("msgBox_netError"))
 end 
 
 --网络请求数据错误的专用弹出窗口
 function showNetDataError()
-  showTop(g_tr("MsgBox_netDataError"))
+  showTop(g_tr("msgBox_netDataError"))
 end 
 
 --被挤下线专用弹出窗口
-function showOffLine()
-  showTop(g_tr("MsgBox_offLine"), function() g_gameManager.reStartGame() end) 
+function showOffLine(str)
+  m_curBoxFlag = 1 
+  showTop(str, function() g_gameManager.reStartGame() end) 
 end 
 
 --强制下线更新弹出窗口
 function showVersionOffLine()
-  httpNet:getInstance():discardAllPost() 
-  showTop(g_tr("MsgBox_versionOffLine"), function() g_gameManager.reStartGame() end) 
+  m_curBoxFlag = 2 
+  HttpNet:getInstance():discardAllPost() 
+  showTop(g_tr("msgBox_versionOffLine"), function() g_gameManager.reStartGame() end) 
 end 
 
 --被封号以后强制下线弹出窗口
 function showDisableUser()
-  httpNet:getInstance():discardAllPost() 
-  showTop(g_tr("MsgBox_disableUser"), function() g_gameManager.reStartGame() end) 
+  m_curBoxFlag = 3 
+  HttpNet:getInstance():discardAllPost() 
+  showTop(g_tr("msgBox_disableUser"), function() g_gameManager.reStartGame() end) 
 end 
 
-return MsgBox
+function getCurBoxFlag()
+  return m_curBoxFlag 
+end 
+
+return MsgBox 

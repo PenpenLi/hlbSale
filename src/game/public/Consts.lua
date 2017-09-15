@@ -23,23 +23,24 @@ Currency = {
 
 --长连接消息id
 NetMsg = {
-  ["LoginReq"]      = 10000,       --登录
-  ["LoginRsp"]      = 10001, 
-  ["HeartBeatReq"]  = 10002,   --心跳包
-  ["HeartBeatRsp"]  = 10003,
-  ["ServerPushReq"] = 10004,  --后台推送
-  ["ServerPushRsp"] = 10005,
-  ["ChatSendReq"]   = 10008,    --聊天
-  ["ChatSendRsp"]   = 10009,
-
+  ["LoginReq"]          = 100,  --登录
+  ["LoginRsp"]          = 101, 
+  ["HeartBeatReq"]      = 102,  --心跳包
+  ["HeartBeatRsp"]      = 103,
+  ["HeartBeatPauseReq"] = 104,  --心跳暂停检测
+  ["HeartBeatPauseRsp"] = 105,
+  ["DataSendReq"]       = 106,  --通用的数据交互, 可用于服务端推送事件
+  ["DataSendRsp"]       = 107,
+  ["ChatSendReq"]       = 108,  --发送聊天数据
+  ["ChatSendRsp"]       = 109,  
 }
 
 
 --用户事件枚举
 CustomEvent = {
-  NewMail    = 1,
-  Chat       = 2,
-  Guild_Help = 3,
+  PoorNetWork = 1,
+  NewMail     = 2,
+  Chat        = 3,
 }
 
 

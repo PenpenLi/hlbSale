@@ -11,6 +11,12 @@
             <Project Name="msg_box_toast.csd" Type="Layer" />
             <Project Name="msg_box_popup.csd" Type="Layer" />
           </Folder>
+          <Folder Name="login">
+            <Project Name="login.csd" Type="Layer" />
+          </Folder>
+          <Folder Name="loading">
+            <Project Name="loading.csd" Type="Layer" />
+          </Folder>
         </Folder>
         <Folder Name="ui">
           <Folder Name="home">
@@ -21,6 +27,7 @@
             <Image Name="msg_box_bg.png" />
             <Image Name="box_cornor.png" />
             <Image Name="bg_text.png" />
+            <Image Name="loading.png" />
           </Folder>
           <Folder Name="button">
             <Image Name="btn_1.png" />
@@ -28,9 +35,24 @@
             <Image Name="btn_3.png" />
             <Image Name="btn_4.png" />
           </Folder>
+          <Folder Name="login">
+            <Image Name="bg.jpg" />
+          </Folder>
+          <Folder Name="loading">
+            <Image Name="loading_bar_bg.png" />
+            <Image Name="loading_bg.jpg" />
+            <Image Name="loading_bar_fg.png" />
+          </Folder>
         </Folder>
         <Folder Name="font">
           <TTF Name="SIMLI.TTF" />
+        </Folder>
+        <Folder Name="login">
+          <Image Name="bg.jpg" />
+        </Folder>
+        <Folder Name="loading">
+          <Image Name="loading_bar_bg.png" />
+          <Image Name="loading_bg.jpg" />
         </Folder>
       </RootFolder>
     </Group>

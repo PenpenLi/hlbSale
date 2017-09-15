@@ -3,9 +3,9 @@
 
 方式1: 使用自己编写的 python 脚本：
 
-在lua_encrypt.py 中配置好路径和加解密的秘钥,签名
+在 encrypt_lua.py 中配置好路径和加解密的秘钥,签名
 
-在cmd里执行命令 lua_encrypt.py -encode 或者 lua_encrypt.py -decode 即可.
+在cmd里执行命令 encrypt_lua.py -encode 或者 encrypt_lua.py -decode 即可.
 
 
 

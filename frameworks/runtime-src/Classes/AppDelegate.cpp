@@ -82,8 +82,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     register_all_packages();
 
-    LuaStack* stack = engine->getLuaStack();
-    stack->setXXTEAKeyAndSign("hlbEncrypt", strlen("hlbEncrypt"), "hlbsign", strlen("hlbsign"));
+    //LuaStack* stack = engine->getLuaStack();
+    //stack->setXXTEAKeyAndSign("hlbkey", strlen("hlbkey"), "hlbsign", strlen("hlbsign"));
     
     //register custom function
     //LuaStack* stack = engine->getLuaStack();

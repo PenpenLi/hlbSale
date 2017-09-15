@@ -31,9 +31,11 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="csb/msg_box/msg_box_popup.csd" />
+          <FilePathData Path="csb/loading/loading.csd" />
+          <FilePathData Path="csb/home/home.csd" />
+          <FilePathData Path="csb/login/login.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="csb/msg_box/msg_box_popup.csd" />
+        <ActiveDocument Path="csb/loading/loading.csd" />
       </Value>
     </Item>
   </Properties>

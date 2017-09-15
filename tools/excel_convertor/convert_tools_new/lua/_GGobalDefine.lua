@@ -21,6 +21,7 @@ local gobalDefine = {
 	"ParticleAnims",
 	"Plist",
 	"Frames",
+	"Starting",
 	}
 }
 return gobalDefine

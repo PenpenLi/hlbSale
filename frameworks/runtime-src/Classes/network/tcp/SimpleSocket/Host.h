@@ -166,7 +166,7 @@ typedef int            int32;
 #define SETSOCKOPT(a,b,c,d,e)  setsockopt(a,b,c,(char *)d, (int)e)
 #define GETHOSTBYNAME(a)       gethostbyname((const char *)a)
 
-#elif defined(ANDROID)||defined(IOS)
+#else
 #define ACCEPT(a,b,c)          accept(a,b,c)
 #define CONNECT(a,b,c)         connect(a,b,c)
 #define CLOSE(a)               close(a)

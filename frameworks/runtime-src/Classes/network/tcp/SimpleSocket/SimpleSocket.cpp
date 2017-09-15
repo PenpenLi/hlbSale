@@ -846,6 +846,64 @@ void CSimpleSocket::TranslateSocketError(void)
             SetSocketError(CSimpleSocket::SocketEunknown);
             break;	
     }
+#else 
+    switch (errno)
+    {
+        case EXIT_SUCCESS:
+	    SetSocketError(CSimpleSocket::SocketSuccess);
+            break;
+        case ENOTCONN:
+            SetSocketError(CSimpleSocket::SocketNotconnected);
+            break;
+        case ENOTSOCK:
+        case EBADF:
+        case EACCES:
+        case EAFNOSUPPORT:
+        case EMFILE:
+        case ENFILE:
+        case ENOBUFS:
+        case ENOMEM:
+        case EPROTONOSUPPORT:
+	    SetSocketError(CSimpleSocket::SocketInvalidSocket);
+            break;
+	case ECONNREFUSED :
+	    SetSocketError(CSimpleSocket::SocketConnectionRefused);
+	    break;
+	case ETIMEDOUT:
+	    SetSocketError(CSimpleSocket::SocketTimedout);
+	    break;
+	case EINPROGRESS:
+	    SetSocketError(CSimpleSocket::SocketEinprogress);
+	    break;
+	case EWOULDBLOCK:
+	    SetSocketError(CSimpleSocket::SocketEwouldblock);
+	    break;
+        case EINTR:
+	    SetSocketError(CSimpleSocket::SocketInterrupted);
+            break;
+        case ECONNABORTED:
+	    SetSocketError(CSimpleSocket::SocketConnectionAborted);
+            break;
+        case EINVAL:
+        case EPROTO:
+	    SetSocketError(CSimpleSocket::SocketProtocolError);
+            break;
+        case EPERM:
+	    SetSocketError(CSimpleSocket::SocketFirewallError);
+            break;
+        case EFAULT:
+	    SetSocketError(CSimpleSocket::SocketInvalidSocketBuffer);
+            break;
+        case ECONNRESET:
+            SetSocketError(CSimpleSocket::SocketConnectionReset);
+            break;
+        case ENOPROTOOPT: 
+            SetSocketError(CSimpleSocket::SocketConnectionReset);
+            break;
+        default:
+            SetSocketError(CSimpleSocket::SocketEunknown);
+            break;	
+    }
 #endif
 }
 

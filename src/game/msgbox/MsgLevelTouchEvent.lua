@@ -44,7 +44,7 @@ function return_key()
     --回调方法
     local function onrelease(code, event)
         if code == cc.KeyCode.KEY_BACK then
-        	local download_channel = g_Account.getDownloadChannel()
+        	local download_channel = g_account.getDownloadChannel()
 					if download_channel == g_sdkManager.SdkDownLoadChannel.anysdk then
 							local pluginChannel = require("anysdk.PluginChannel"):getInstance()
 							if pluginChannel then

@@ -31,6 +31,9 @@
     <Filter Include="Classes\network\tcp\simpleSocket">
       <UniqueIdentifier>{cd9d5928-f29c-4b4e-b182-31ace5ba5194}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\common">
+      <UniqueIdentifier>{d8434eca-d1cd-426d-853d-dede792a0c31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h">
@@ -65,14 +68,20 @@
     <ClInclude Include="..\Classes\forLua\forLua.h">
       <Filter>Classes\forlua</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\network\http\httpNet.h">
-      <Filter>Classes\network\http</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\network\tcp\SimpleSocket\Host.h">
       <Filter>Classes\network\tcp\simpleSocket</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\network\tcp\SimpleSocket\SimpleSocket.h">
       <Filter>Classes\network\tcp\simpleSocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\network\http\HttpNet.h">
+      <Filter>Classes\network\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\common\GameUtil.h">
+      <Filter>Classes\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\encrypt\md5.h">
+      <Filter>Classes\encrypt</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -104,9 +113,6 @@
     <ClCompile Include="..\Classes\forLua\forLua.cpp">
       <Filter>Classes\forlua</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\network\http\httpNet.cpp">
-      <Filter>Classes\network\http</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\network\tcp\SimpleSocket\SimpleSocket.cpp">
       <Filter>Classes\network\tcp\simpleSocket</Filter>
     </ClCompile>
@@ -118,6 +124,15 @@
     </ClCompile>
     <ClCompile Include="..\Classes\network\tcp\NetManager.cpp">
       <Filter>Classes\network\tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\network\http\HttpNet.cpp">
+      <Filter>Classes\network\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\common\GameUtil.cpp">
+      <Filter>Classes\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\encrypt\md5.c">
+      <Filter>Classes\encrypt</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

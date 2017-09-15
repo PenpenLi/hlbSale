@@ -138,7 +138,7 @@ static void aes_decode(const char * password, int passwordLength, unsigned char 
 }
 
 /*消息压缩加密*/
-std::string MsgPack::pack(const std::string & msgBuff)
+std::string MsgPack::pack_xor(const std::string & msgBuff)
 {
     unsigned long origin_size = (unsigned long)(msgBuff.size());
     unsigned long need_size = compressBound(origin_size);
@@ -184,7 +184,7 @@ std::string MsgPack::pack(const std::string & msgBuff)
 }
 
 
-std::string MsgPack::unpack(const std::string &msgBuff)
+std::string MsgPack::unpack_xor(const std::string &msgBuff)
 {
     std::string ret = "";
 
@@ -240,8 +240,8 @@ std::string MsgPack::unpack(const std::string &msgBuff)
 }
 
 
-/*使用AES 加密*/
-std::string MsgPack::pack2(const std::string & msgBuff)
+/*压缩并使用AES 加密和base64 加密*/
+std::string MsgPack::pack_aes(const std::string & msgBuff)
 {
     char aes_key_buf[AES_KEY_SIZE] = { 0 };
     for (int i = 0; i < AES_KEY_SIZE; i++)
@@ -410,7 +410,7 @@ std::string MsgPack::unpack2(const std::string & msgBuff)
     return ret;
 }
 
-std::string MsgPack::unpack2_new(const std::string & msgBuff, int * sss)
+std::string MsgPack::unpack_aes(const std::string & msgBuff, int * sss)
 {
     char aes_key_buf[AES_KEY_SIZE] = { 0 };
     for (int i = 0; i < AES_KEY_SIZE; i++)

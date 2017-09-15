@@ -21,7 +21,6 @@ function reStartGame()
       package.loaded[path] = nil 
     end 
   end 
-
 end 
 
 --退出游戏

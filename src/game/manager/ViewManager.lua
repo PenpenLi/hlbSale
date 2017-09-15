@@ -12,12 +12,15 @@ local layerEnum = {
                     Guild    = 5, --新手引导
                     NetError = 6, --网络断开
                   }
-local layerObjs = {}
+local m_layerObjs = {}
+local m_sceneType
 
 --进入新场景时默认显示的layer
 local function initSceneLayer(sceneType) 
   if sceneType == g_consts.SceneType.login then 
+    addNodeForUI(require("game.views.login.LoginView").new()) 
   elseif sceneType == g_consts.SceneType.loading then 
+    addNodeForUI(require("game.views.loading.LoadingView").new()) 
   elseif sceneType == g_consts.SceneType.game then 
     addNodeForUI(require("game.views.home.HomeView").new()) 
   end 
@@ -26,6 +29,8 @@ end
 --切换场景
 function setScene(sceneType)
   print("setScene", sceneType)
+  m_sceneType = sceneType
+
   if mLayerRoot then 
     mLayerRoot:removeFromParent()
   end
@@ -46,7 +51,7 @@ function setScene(sceneType)
     node:setPosition(display.center)
     node:setContentSize(display.size)  
     mLayerRoot:addChild(node, zorder)
-    layerObjs[zorder] = node 
+    m_layerObjs[zorder] = node 
   end 
 
   initSceneLayer(sceneType)
@@ -56,45 +61,47 @@ function setScene(sceneType)
     director:replaceScene(newScene)
   else
     director:runWithScene(newScene)
-  end  
+  end 
 end 
 
 function addNodeForMap(node)
   if node then
-    layerObjs[layerEnum.Map]:addChild(node)
+    m_layerObjs[layerEnum.Map]:addChild(node)
   end
 end
 
 function addNodeForUI(node) 
   if node then 
-    layerObjs[layerEnum.UI]:addChild(node)
+    m_layerObjs[layerEnum.UI]:addChild(node)
   end
 end
 
 function addNodeForMsgBox(node) 
   if node then
-    layerObjs[layerEnum.MsgBox]:addChild(node)
+    m_layerObjs[layerEnum.MsgBox]:addChild(node)
   end
 end 
 
 function addNodeForNetError(node) 
   if node then
-    layerObjs[layerEnum.NetError]:addChild(node)
+    m_layerObjs[layerEnum.NetError]:addChild(node)
   end
 end 
 
 function addNodeForEffect(node) 
   if node then
-    layerObjs[layerEnum.Effect]:addChild(node)
+    m_layerObjs[layerEnum.Effect]:addChild(node)
   end
 end 
 
 function addNodeForGuild(node) 
   if node then
-    layerObjs[layerEnum.Guild]:addChild(node)
+    m_layerObjs[layerEnum.Guild]:addChild(node)
   end
 end
 
-
+function getCurSceneType()
+  return m_sceneType 
+end 
 
 return ViewManager

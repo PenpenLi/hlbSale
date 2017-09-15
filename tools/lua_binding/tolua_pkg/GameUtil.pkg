@@ -1,0 +1,5 @@
+class GameUtil
+{
+    static std::string getMD5Data(const char *data, int dataLen);
+    static std::string getMD5String(std::string &str);
+};

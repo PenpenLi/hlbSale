@@ -47,8 +47,30 @@ test.testAPI = function(uiNode)
   -- g_audioManager.playMusic(g_consts.AudioPath.MusicBackground, true)
   -- g_audioManager.playEffect(g_consts.AudioPath.EffectConfirm)
 
+  --短连接http
+  local function onRecv(result, data)
+    print("===onRecv :", result)
+    dump(data, "=====")
+  end 
+  g_http.postData("test/getInfo", {item = 1234}, onRecv) 
+
+  --长连接建立连接 
+  require("network/TcpInit").tcpNetInit() 
+
+  -- g_cacheFile.saveToFile()
+
+  
+end 
 
 
+--长连接建立连接后的数据通信
+test.testOther = function()
+  
+  local function onRecv()
+    print("====onRecv")
+  end 
+  g_tcp.registMsgCallback(g_consts.NetMsg.HeartBeatPauseRsp, test, onRecv) 
+  g_tcp.sendMessage(g_consts.NetMsg.HeartBeatPauseReq, {})
 end 
 
 
