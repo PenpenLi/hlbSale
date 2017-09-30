@@ -37,6 +37,7 @@ function requestServerList(successHandler)
   HttpNet:getInstance():post(url, para, string.len(para), onRecv, 12, 12, true, false) --异步请求, 参数不加密
 end 
 
+
 --当进入游戏服时校验玩家合法性和唯一性 
 function reqCheckPlayer(successCallback)
   local function onRecv(result, msgData)

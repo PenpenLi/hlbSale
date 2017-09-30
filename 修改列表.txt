@@ -124,5 +124,12 @@
 	在Xcode中选中工程 hlb_sale 在General/Deployment Info/Device Orientation勾选Portrait即可竖屏显示
 
 	
+	
+14. 移植AnySDK
+	移除第三方功能模块方法：
+	 1) C++部分： frameworks\runtime-src\proj.android-studio\app\jni\Android.mk 里面有总开关,如OPEN_ANYSDK = 0 ;
+	 2) 移除 proj.android-studio\app\libs\下对应的jar包，比如改名为*.bak ，确保不会被编译到apk中 ;
+	 3) AppActivity.java 中移除 import 语句, 同时修改如下代码开始部分的第三方插件开关,如private static final boolean ANYSDK_SUPPORT = false;
+
 
 	

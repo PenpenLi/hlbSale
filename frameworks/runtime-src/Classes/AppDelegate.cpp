@@ -24,6 +24,12 @@ using namespace CocosDenshion;
 #include "forLua/forLua.h" //hlb
 #include "network/tcp/NetLua.h"
 
+#if defined(ANYSDK_SUPPORT) && (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "anysdk/anysdkbindings.h"
+#include "anysdk/anysdk_manual_bindings.h"
+#endif 
+
+
 USING_NS_CC;
 using namespace std;
 
@@ -78,6 +84,14 @@ bool AppDelegate::applicationDidFinishLaunching()
     luaopen_cjson(L); 
     tolua_forLua_open(L);//include http
     register_tcp_luabinding(L);
+    
+#if defined(ANYSDK_SUPPORT) && (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    LuaStack* stack = LuaEngine::getInstance()->getLuaStack();
+    lua_getglobal(L, "_G");
+    tolua_anysdk_open(L);
+    tolua_anysdk_manual_open(L);
+    lua_pop(L, 1);
+#endif
     //by hlb -- end
     
     register_all_packages();

@@ -405,6 +405,9 @@
     <content url="file://$MODULE_DIR$/../../Classes">
       <sourceFolder url="file://$MODULE_DIR$/../../Classes" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../Classes/anysdk">
+      <sourceFolder url="file://$MODULE_DIR$/../../Classes/anysdk" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../Classes/cjson">
       <sourceFolder url="file://$MODULE_DIR$/../../Classes/cjson" isTestSource="false" />
     </content>
@@ -508,6 +511,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/transforms" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
+      <excludeFolder url="file://$MODULE_DIR$/build/reports" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
     <content url="file://D:/tools/Sdk/ndk-bundle/sources/android/cpufeatures">
@@ -515,6 +519,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="libPluginProtocol" level="project" />
     <orderEntry type="module" module-name="libcocos2dx" exported="" />
     <orderEntry type="library" exported="" name="com.android.vending.expansion.zipfile" level="project" />
     <orderEntry type="library" exported="" name="httpclient-4.4.1.1" level="project" />

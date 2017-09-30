@@ -10,6 +10,7 @@ function LoginView:ctor()
 end 
 
 function LoginView:onEnter()
+  print("LoginView:onEnter")
 
   local layer = g_gameTool.loadCocosUI("csb/login/login.csb", 5)
   if layer then 
@@ -17,47 +18,54 @@ function LoginView:onEnter()
     self:regBtnCallback(btn, handler(self, self.onReqServerList)) 
     self:addChild(layer)
   end 
+
+  g_eventDispatch.addEventHandler(g_consts.CustomEvent.SdkLoginResult, handler(self, self.onSdkLoginResult))
 end 
 
 function LoginView:onExit() 
+  print("LoginView:onExit")
+  g_eventDispatch.removeEventHandler(g_consts.CustomEvent.SdkLoginResult, self)
 end 
 
 --case 1 
 function LoginView:onReqServerList()
   print("onReqServerList")
-  local function onSuccess()
-    print("onSuccess") 
-    self:onSDKLogin()
-  end 
-  LoginMode.requestServerList(onSuccess)
+
+  LoginMode.requestServerList(handler(self, self.onSDKLogin))
 end 
 
 --case 2
 function LoginView:onSDKLogin()
-  print("onSDKLogin")
-  --todo 
-
-  self:checkPlayer()
+  print("onSDKLogin") 
+  g_sdkManager.sdkLogin(g_sdkManager.loginChannel.anysdk)
 end 
 
 --case 3
 --检测玩家是否存在,如果不存在则创建,返回login_hash_code,
 --如果之前已经在其他设备登录,则将它踢下线,并登录游戏
 function LoginView:checkPlayer() 
-  print("checkPlayer")
-  local function onSuccess()
-    self:onLoading() 
-  end   
-  LoginMode.reqCheckPlayer(onSuccess) 
+  print("checkPlayer")  
+  LoginMode.reqCheckPlayer(handler(self, self.loadingResource))
 end 
 
-
-function LoginView:onLoading()
-  print("onLoading")
+--case 4
+--加载资源进入游戏
+function LoginView:loadingResource()
+  print("loadingResource")
   -- g_viewManager.setScene(g_consts.SceneType.game) 
   g_viewManager.setScene(g_consts.SceneType.loading) 
 end 
 
+--SDK登录成功则开始case 3, 检测玩家是否存在
+function LoginView:onSdkLoginResult(target, data)
+  print("onSdkLoginResult:", data.result)
+
+  if data.result then 
+    self:checkPlayer()
+  else 
+    print("sdk login fail ")
+  end 
+end 
 
 
 

@@ -12,6 +12,12 @@ local lang = {
 ["serverMaintainTip"] = "服务器正在进行维护，主公请稍后再试！",
 ["serverMaintainTitle"] = "维护公告",
 ["loadingFailTips"] = "加载过程发生错误,是否重试？",
+["paySuccess"] = "支付成功",
+["payFail"] = "支付失败",
+["payCancel"] = "支付取消",
+["payNetError"] = "支付网络出现错误",
+["payInfoNotComplete"] = "支付信息提供不完全",
+
 }
 
 return lang 

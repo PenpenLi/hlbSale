@@ -37,5 +37,14 @@
         sha1="becf40a1a480be2a5ccb46529dce490f31b516d5">
         <dex dex="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\pre-dexed\debug\httpclient-4.4.1.1_f4ffe2d678752d0e94fa99a5c16506ff7f1380c6.jar" />
     </item>
+    <item
+        is-multidex="false"
+        jar="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\libs\libPluginProtocol.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c9e825a62118ca3c2bb70efc0b3d79420a251ccb">
+        <dex dex="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\pre-dexed\debug\libPluginProtocol_1f9760bd717b928fd2d9a061f5766b5241c386b2.jar" />
+    </item>
 
 </items>

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml:2:1-40:12
+ADDED from D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml:2:1-47:12
 	package
 		ADDED from D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml:3:5-27
 		INJECTED from D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml
@@ -84,6 +84,14 @@ uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml:38:3-78
 	android:name
 		ADDED from D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml:38:20-76
+uses-permission#android.permission.RESTART_PACKAGES
+ADDED from D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml:41:2-72
+	android:name
+		ADDED from D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml:41:19-69
+uses-permission#android.permission.KILL_BACKGROUND_PROCESSES
+ADDED from D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml:42:2-81
+	android:name
+		ADDED from D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml:42:19-78
 uses-sdk
 INJECTED from D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [proj.android-studio:libcocos2dx:unspecified] D:\hlb\hlb_sale\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41

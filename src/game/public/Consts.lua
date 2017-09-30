@@ -38,9 +38,11 @@ NetMsg = {
 
 --用户事件枚举
 CustomEvent = {
-  PoorNetWork = 1,
-  NewMail     = 2,
-  Chat        = 3,
+  PoorNetWork    = 1,
+  NewMail        = 2,
+  Chat           = 3,
+  SdkLoginResult = 4,
+  SdkPayResult   = 5,
 }
 
 

@@ -25,6 +25,9 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.lua;
 
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
@@ -33,8 +36,21 @@ import com.hlb.sale.R;
 import org.cocos2dx.lib.Cocos2dxActivity;
 
 
+import com.anysdk.framework.PluginWrapper;
+
+
+//移除第三方功能模块方法：
+// 1) C++： frameworks\runtime-src\proj.android-studio\app\jni\Android.mk 里面修改C++部分的开关,如OPEN_ANYSDK = 0 ;
+// 2) 移除 proj.android-studio\app\libs\下对应的jar包，比如改名为*.bak ，确保不会被编译到apk中 ;
+// 3) AppActivity.java 中移除 import 语句, 同时修改如下第三方插件开关,如private static final boolean ANYSDK_SUPPORT = false;
+// 4) proj.android-studio.iml 移除相关权限
+
+
 public class AppActivity extends Cocos2dxActivity{
     private long exitTime = 0;
+
+    //第三方插件开关
+    private static final boolean ANYSDK_SUPPORT = true; //anysdk
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -45,7 +61,8 @@ public class AppActivity extends Cocos2dxActivity{
         return super.onKeyDown(keyCode, event);
     }
 
-    public void exit() {
+    //exit game when keydown. --by hlb
+    private void exit() {
         if ((System.currentTimeMillis() - exitTime) > 2000) {
             Toast.makeText(getApplicationContext(), R.string.exit_when_touch_again,
                     Toast.LENGTH_SHORT).show();
@@ -56,4 +73,109 @@ public class AppActivity extends Cocos2dxActivity{
         }
     }
 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.init(this);
+            PluginWrapper.loadAllPlugins();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.onResume();
+        }
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.onPause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.onDestroy();
+        }
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.onActivityResult(requestCode, resultCode, data);
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.onNewIntent(intent);
+        }
+        super.onNewIntent(intent);
+    }
+
+    @Override
+    protected void onStop() {
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.onStop();
+        }
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.onRestart();
+        }
+        super.onRestart();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.onBackPressed();
+        }
+        super.onBackPressed();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.onConfigurationChanged(newConfig);
+        }
+        super.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.onRestoreInstanceState(savedInstanceState);
+        }
+        super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.onSaveInstanceState(outState);
+        }
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onStart() {
+        if (ANYSDK_SUPPORT) {
+            PluginWrapper.onStart();
+        }
+        super.onStart();
+    }
 }

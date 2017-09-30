@@ -3,12 +3,13 @@ local Account = {}
 setmetatable(Account,{__index = _G})
 setfenv(1,Account)
 
-local m_serverList    --所有服务器列表
-local m_curArea       --当前选择哪个区
-local m_httpHost      --当前使用服务器地址
-local m_tcpHost       --当前使用长连接服务器地址
-local m_uuid          --登录时由服务器返回
-local m_loginHashCode --每次登录在checkPlayer时服务器会下发新的登陆码
+local m_serverList        --所有服务器列表
+local m_histroySerList    --用户登录过的服务器列表,用于游戏内切换不同区服务器
+local m_curArea           --当前选择哪个区
+local m_httpHost          --当前使用服务器地址
+local m_tcpHost           --当前使用长连接服务器地址
+local m_channelUid        --登录渠道返回的uid
+local m_loginHashCode     --每次登录在checkPlayer时服务器会下发新的登陆码
 local m_platform 
 
 --所有服务器列表
@@ -18,6 +19,14 @@ end
 
 function getServerList()
   return m_serverList 
+end 
+
+function setHistoryServerList(srvList)
+  m_histroySerList = srvList 
+end 
+
+function getHistoryServerList()
+  return m_histroySerList 
 end 
 
 --当前选择哪个区(即服务器列表索引)
@@ -47,12 +56,13 @@ function getTcpHost()
   return m_tcpHost
 end
 
-function setUUID(uuid)
-  m_uuid = uuid
+--渠道UID,由渠道服务器返回
+function setChannelUID(uid)
+  m_channelUid = uid
 end 
 
-function getUUID()
-  return m_uuid 
+function getChannelUID()
+  return m_channelUid 
 end 
 
 --登录校验码,当进入游戏服checkplayer的时候校验用,

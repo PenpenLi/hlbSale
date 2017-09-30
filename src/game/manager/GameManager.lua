@@ -35,7 +35,7 @@ end
 
 
 --程序进入/退出后台处理
-local m_enterBgTime
+local m_enterBgTime = os.time() 
 local function onAppEnterBackground() 
   print("=== onAppEnterBackground")
   m_enterBgTime = os.time()

@@ -12,7 +12,19 @@ namespace {
 std::unique_ptr<AppDelegate> appDelegate;
 }
 
+#ifdef ANYSDK_SUPPORT
+#include "PluginJniHelper.h"
+using namespace anysdk::framework;
+#endif
+
 void cocos_android_app_init(JNIEnv* env) {
     LOGD("cocos_android_app_init");
     appDelegate.reset(new AppDelegate());
+
+#ifdef ANYSDK_SUPPORT
+    JavaVM* vm;
+    env->GetJavaVM(&vm);
+    PluginJniHelper::setJavaVM(vm);    
+#endif
+
 }

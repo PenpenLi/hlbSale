@@ -6,7 +6,6 @@ APP_LDFLAGS := -latomic
 #for SimpleSocket
 APP_CFLAGS := -DANDROID
 
-
 APP_ABI := armeabi
 APP_SHORT_COMMANDS := true
 

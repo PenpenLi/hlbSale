@@ -13,12 +13,7 @@ end
 
 
 --得到基本信息,只可使用不可修改
-function getData()
-    --test +++++++++++++++++++++++++++++++++++++>
-    m_baseData = {id = 1234}
-
-
-
+function getData() 
     if nil == m_baseData then
         RequestData()
     end
