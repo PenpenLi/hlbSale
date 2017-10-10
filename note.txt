@@ -1,0 +1,46 @@
+1. 网络模块TCP, 心跳包 , 注意要统一大小端!!!发送和接收都需要转换 (host需要转换为网络字节序 htons/htonl), 重新连接前需要清消息队列，防止心跳包重复发,使用新定时器机制
+2. 图片压缩
+3. 图片加解密  ok
+4. 2X速运行
+5. 自动更新,
+8. 资源调用_res， 动画 ok
+9. 弹框，提示框 ok
+10.时间管理 ok
+11.进入/退出后台 ok
+12.luajit
+13.richtext 
+14.音频 ok
+15.进入后台 ok
+16.语音聊天 
+17.支付
+18.SDK渠道接入
+19.webView公告
+20.uuid
+21.cocos studio 支持cocos2dx-3.15 ok
+22.导表工具 ok
+23.多分辨率适配 ok
+24.C++到lua绑定工具 ok
+25.添加cjson库, ok 
+26.定时器管理
+27.android打包 ok
+28.防止手机休眠
+29.ipv6
+30.ssl 
+31.IOS64位
+32.游戏全屏幕模式 
+33.IOS打包 OK
+34.lua脚本加密 ok
+35.骨骼动画
+36.缓存文件，记录用户设置开关等信息,需要加密
+37.进首页前预处理
+38.busyTip超时自动消失15
+39.走马灯
+
+
+
+微信appid： 
+游戏包名： com.hlb.tcard
+md5: 0ebbc1becd53e0fc639a4d6a1eaf9f48
+
+AppID：wx708e74f728e0e612
+AppSecret：20cd63bf9dc2068c7023c9e35ce96067
