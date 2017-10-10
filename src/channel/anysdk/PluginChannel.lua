@@ -28,7 +28,7 @@ local function onUserResult( plugin, code, msg )
     --do
   elseif code == UserActionResultCode.kLoginSuccess then
     g_account.setChannelUID(user_plugin:getUserID()) 
-    if msg then 
+    if msg and msg ~= "" then 
       local dataTable = cjson.decode(msg)
       -- g_account.setHistoryServerList(dataTable.ext)
     end 
@@ -190,7 +190,7 @@ function PluginChannel:login()
     user_plugin:setActionListener(onUserResult)
     local paramMap = {
       server_id = "1",
-      server_url = g_gameConfig.loginHost.."/login_server/loginAnySDK" --传入的地址将覆盖掉配置的登陆验证地址 LOGIN_CHECK_URL
+      server_url = g_gameConfig.loginHost.."/login_server/loginAnySDK" --传入的地址将覆盖init()函数时配置的登陆验证地址
     }
     
     user_plugin:login(paramMap)
