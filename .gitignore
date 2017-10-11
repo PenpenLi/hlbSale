@@ -1,4 +1,4 @@
 /frameworks/runtime-src/proj.android-studio/build/
 /frameworks/cocos2d-x/cocos/platform/android/libcocos2dx/build/
 /frameworks/runtime-src/proj.android-studio/app/build/
-
+/frameworks/runtime-src/proj.android-studio/.gradle/
