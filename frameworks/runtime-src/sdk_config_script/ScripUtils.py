@@ -30,7 +30,7 @@ def insertStr(allText, subStr, pos):
             break;
 
     linePrefix = allText[tmp:pos]
-    allText = allText[:pos] + subStr + linePrefix+ allText[pos:-1] 
+    allText = allText[:pos] + subStr + linePrefix+ allText[pos:] 
     return allText 
 
 # 从 pos 位置删除字符串subStr, 如果删除后所在位置为空白行则删除

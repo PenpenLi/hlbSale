@@ -38,6 +38,8 @@ import org.cocos2dx.lib.Cocos2dxActivity;
 
 import com.anysdk.framework.PluginWrapper;
 
+//SDK_TAG_IMPORT  脚本自动添加代码时用来定位，不要删！！by hlb
+
 
 //移除第三方功能模块方法：
 // 1) C++： frameworks\runtime-src\proj.android-studio\app\jni\Android.mk 里面修改C++部分的开关,如OPEN_ANYSDK = 0 ;
@@ -51,7 +53,8 @@ public class AppActivity extends Cocos2dxActivity{
 
     //第三方插件开关
     private static final boolean ANYSDK_SUPPORT = true; //anysdk
-
+	//SDK_TAG_VAR  脚本自动添加代码时用来定位，不要删！！by hlb
+	
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK){
@@ -81,6 +84,7 @@ public class AppActivity extends Cocos2dxActivity{
             PluginWrapper.init(this);
             PluginWrapper.loadAllPlugins();
         }
+		//SDK_TAG_ONCREATE  脚本自动添加代码时用来定位，不要删！！by hlb
     }
 
     @Override

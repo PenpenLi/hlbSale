@@ -3,48 +3,48 @@
 
     <item
         is-multidex="false"
-        jar="D:\hlb\hlb_sale\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\bundles\default\libs\com.android.vending.expansion.zipfile.jar"
+        jar="C:\work\hlbSale\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\bundles\default\libs\com.android.vending.expansion.zipfile.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="3785cbb057b995cb42463158b1a798fcc78bb3b0">
-        <dex dex="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\pre-dexed\debug\com.android.vending.expansion.zipfile_5886fb19e885c24aeb9c40f9f8d4390b6921317d.jar" />
+        <dex dex="C:\work\hlbSale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\pre-dexed\debug\com.android.vending.expansion.zipfile_f4a176da6c2af85d4c8e863dd3da267fa568a916.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\hlb\hlb_sale\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\bundles\default\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b903d4acd3ef3c6a7eb52f95bcb5498c6427b4ab">
-        <dex dex="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\pre-dexed\debug\classes_24985409ee0bcbff948fa9fc40e2b8ba100629ff.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\hlb\hlb_sale\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\bundles\default\libs\android-async-http-1.4.9.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="769f000c2940ab43578cd56ffcc81340aad0b182">
-        <dex dex="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.9_a34b3ce5197ae081fffd9f7654f11b6125d52590.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\hlb\hlb_sale\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\bundles\default\libs\httpclient-4.4.1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="becf40a1a480be2a5ccb46529dce490f31b516d5">
-        <dex dex="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\pre-dexed\debug\httpclient-4.4.1.1_f4ffe2d678752d0e94fa99a5c16506ff7f1380c6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\libs\libPluginProtocol.jar"
+        jar="C:\work\hlbSale\frameworks\runtime-src\proj.android-studio\app\libs\libPluginProtocol.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="c9e825a62118ca3c2bb70efc0b3d79420a251ccb">
-        <dex dex="D:\hlb\hlb_sale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\pre-dexed\debug\libPluginProtocol_1f9760bd717b928fd2d9a061f5766b5241c386b2.jar" />
+        <dex dex="C:\work\hlbSale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\pre-dexed\debug\libPluginProtocol_0eedb920185b724c5028cd763d9b087b28cba547.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\work\hlbSale\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b903d4acd3ef3c6a7eb52f95bcb5498c6427b4ab">
+        <dex dex="C:\work\hlbSale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\pre-dexed\debug\classes_57cceeb9098e49d8ddf36176d703cbd76407e51e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\work\hlbSale\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\bundles\default\libs\httpclient-4.4.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="becf40a1a480be2a5ccb46529dce490f31b516d5">
+        <dex dex="C:\work\hlbSale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\pre-dexed\debug\httpclient-4.4.1.1_dd4f767f4658b5cf7754b503ba2304cc34fd4dcd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\work\hlbSale\frameworks\cocos2d-x\cocos\platform\android\libcocos2dx\build\intermediates\bundles\default\libs\android-async-http-1.4.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="769f000c2940ab43578cd56ffcc81340aad0b182">
+        <dex dex="C:\work\hlbSale\frameworks\runtime-src\proj.android-studio\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.9_af34783886048c1b6bb9efdbdc817ef5715a62df.jar" />
     </item>
 
 </items>
