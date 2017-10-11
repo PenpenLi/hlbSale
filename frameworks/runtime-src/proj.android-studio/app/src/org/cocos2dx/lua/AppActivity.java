@@ -53,7 +53,7 @@ public class AppActivity extends Cocos2dxActivity{
 
     //第三方插件开关
     private static final boolean ANYSDK_SUPPORT = true; //anysdk
-	//SDK_TAG_VAR  脚本自动添加代码时用来定位，不要删！！by hlb
+    //SDK_TAG_VAR  脚本自动添加代码时用来定位，不要删！！by hlb
 	
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -84,7 +84,7 @@ public class AppActivity extends Cocos2dxActivity{
             PluginWrapper.init(this);
             PluginWrapper.loadAllPlugins();
         }
-		//SDK_TAG_ONCREATE  脚本自动添加代码时用来定位，不要删！！by hlb
+        //SDK_TAG_ONCREATE  脚本自动添加代码时用来定位，不要删！！by hlb
     }
 
     @Override
