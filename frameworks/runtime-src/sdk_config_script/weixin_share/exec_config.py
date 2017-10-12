@@ -54,6 +54,8 @@ def config_build_gradle(bRemove):
 def config_AppActivity_java(bRemove):
     #1)文件开头 import 相关类
     str_heads = [
+        'import android.graphics.Bitmap;',
+        'import android.graphics.BitmapFactory;',
         'import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;', 
         'import com.tencent.mm.opensdk.modelmsg.WXImageObject;',
         'import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;',
@@ -76,10 +78,47 @@ def config_AppActivity_java(bRemove):
         'api.registerApp(APP_ID);'
     ]
 
+    #4) 在AppActivity 类中添加微信分享函数
+    str_func = [
+        '//微信分享\n'\
+        '\t//title:标题 ; text:分享的文本内容; imgPath:分享的图片路径; url:分享成功后点击链接将直接前往改网站; bTimeLine:是否分享到朋友圈,默认分享给朋友\n' \
+        '\tpublic static void onWXShare(String title, String text, String imgPath, String url, boolean bTimeLine) {\n' \
+        '\t\tLog.d("HLB", "=== onWXShare ===");\n' \
+        '\t\tWXWebpageObject webpage = new WXWebpageObject();\n' \
+        '\t\twebpage.webpageUrl = url;\n' \
+        '\t\tWXMediaMessage msg = new WXMediaMessage();\n' \
+        '\t\tmsg.mediaObject = webpage;\n' \
+        '\t\tmsg.title = title;\n' \
+        '\t\tmsg.description = text;\n' \
+        '\t\tSendMessageToWX.Req req = new SendMessageToWX.Req();\n' \
+        '\t\tif (! "".equals(imgPath)) {\n' \
+        '\t\t\tBitmapFactory.Options options = new BitmapFactory.Options();\n' \
+        '\t\t\toptions.inSampleSize = 2;\n' \
+        '\t\t\tBitmap img = BitmapFactory.decodeFile(imgPath, options);\n' \
+        '\t\t\tWXImageObject wxImage = new WXImageObject(img);\n' \
+        '\t\t\treq.transaction = "img";\n' \
+        '\t\t}\n' \
+        '\t\telse {\n' \
+        '\t\t\treq.transaction = "webpage";\n' \
+        '\t\t}\n' \
+        '\n' \
+        '\t\treq.message = msg;\n' \
+        '\t\tif (bTimeLine) {\n' \
+        '\t\t\treq.scene = SendMessageToWX.Req.WXSceneTimeline;\n' \
+        '\t\t}\n' \
+        '\t\telse {\n' \
+        '\t\t\treq.scene = SendMessageToWX.Req.WXSceneSession;\n' \
+        '\t\t}\n' \
+        '\t\tapi.sendReq(req);\n' \
+        '\t}\n'
+    ]
+
+
     content = [ 
         [str_heads,     '//SDK_TAG_IMPORT'],
         [str_var,       '//SDK_TAG_VAR'],
-        [str_oncreate,  '//SDK_TAG_ONCREATE']
+        [str_oncreate,  '//SDK_TAG_ONCREATE'],
+        [str_func,      '//SDK_TAG_NEW_FUNC']
     ]
 
 

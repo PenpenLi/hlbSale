@@ -55,8 +55,15 @@ function loadCocosUI(filename, place)
 end
 
 
-
-
+--执行java函数(如果java函数不存在,不会导致程序崩溃) onResult(data), 其中参数data： "true", "false"
+--calssName:java类名(如 org.cocos2dx.lua.AppActivity 或 org/cocos2dx/lua/AppActivity)
+--funcName：java类成员函数
+function execJavaFunc(calssName, funcName, onResult)
+  local params = {string.gsub(calssName,'/','.'), funcName, onResult}
+  local arg = "(Ljava/lang/String;Ljava/lang/String;I)V"
+  local luaj = require "cocos.cocos2d.luaj"
+  luaj.callStaticMethod("org/cocos2dx/lua/AppActivity", "isFuncExist", params, arg)
+end 
 
 
 

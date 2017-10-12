@@ -57,11 +57,13 @@ android {
     }
 
     signingConfigs {
-		debug {
-			v2SigningEnabled false
-		}
-       release {
-			v2SigningEnabled false
+        debug {
+            v1SigningEnabled true 
+            v2SigningEnabled true
+        }
+        release {
+            v1SigningEnabled true 
+            v2SigningEnabled true
             if (project.hasProperty("RELEASE_STORE_FILE")) {
                 storeFile file(RELEASE_STORE_FILE)
                 storePassword RELEASE_STORE_PASSWORD
@@ -91,6 +93,10 @@ android {
                 ndkBuild {
                     arguments 'NDK_DEBUG=1'
                 }
+            }
+            //debug 暂时也使用签名,可在 proj.android-studio/gradle.properties文件里关闭
+            if (project.hasProperty("RELEASE_STORE_FILE")) {
+                signingConfig signingConfigs.release
             }
         }
     }
@@ -135,8 +141,8 @@ def compileLua(srcDir, dstDir, doCompile, is64bit, doEncrypt) {
     // commandLine compileArgs
     println 'running command : ' + 'cocos ' + compileArgs.join(' ')
     
-	println '@@@@@@@ skip lua compile by hlb , haha hahahaha'
-	//exec {
+    println '@@@@@@@ skip lua compile by hlb , haha hahahaha'
+    //exec {
     //    // if you meet problem, just replace `getCocosCommandPath()` to the path of cocos command
     //   executable getCocosCommandPath()
     //    args compileArgs
@@ -245,13 +251,13 @@ android.applicationVariants.all { variant ->
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':libcocos2dx')
-	
-	//SDK_TAG_DEPENDENCIES 脚本自动添加代码时用来定位，不要删！！by hlb
-	
-	//by hlb ,将libs目录下的aar文件打入游戏apk包
-	fileTree(dir: 'libs', include: '**/*.aar').each{File file->dependencies.add("compile",
-				[name:file.name.lastIndexOf('.').with{it != -1? file.name[0..<it]:file.name},
-				ext:'aar'])}
+    
+    //SDK_TAG_DEPENDENCIES 脚本自动添加代码时用来定位，不要删！！by hlb
+    
+    //by hlb ,将libs目录下的aar文件打入游戏apk包
+    fileTree(dir: 'libs', include: '**/*.aar').each{File file->dependencies.add("compile",
+                [name:file.name.lastIndexOf('.').with{it != -1? file.name[0..<it]:file.name},
+                ext:'aar'])}
 }
 
 //by hlb, for aligame
@@ -269,4 +275,4 @@ repositories {
 
 
 
-
+
