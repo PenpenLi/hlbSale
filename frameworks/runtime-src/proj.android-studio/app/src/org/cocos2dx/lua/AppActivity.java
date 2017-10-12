@@ -31,33 +31,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.Toast;
-
 import com.hlb.sale.R;
-
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxLuaJavaBridge;
-
-
-import com.anysdk.framework.PluginWrapper;
-
 import java.lang.reflect.Method;
-
 
 //SDK_TAG_IMPORT  脚本自动添加代码时用来定位，不要删！！by hlb
 
 
-//移除第三方功能模块方法：
-// 1) C++： frameworks\runtime-src\proj.android-studio\app\jni\Android.mk 里面修改C++部分的开关,如OPEN_ANYSDK = 0 ;
-// 2) 移除 proj.android-studio\app\libs\下对应的jar包，比如改名为*.bak ，确保不会被编译到apk中 ;
-// 3) AppActivity.java 中移除 import 语句, 同时修改如下第三方插件开关,如private static final boolean ANYSDK_SUPPORT = false;
-// 4) proj.android-studio.iml 移除相关权限
-
-
 public class AppActivity extends Cocos2dxActivity{
     private long exitTime = 0;
-
-    //第三方插件开关
-    private static final boolean ANYSDK_SUPPORT = true; //anysdk
+	
     //SDK_TAG_VAR  脚本自动添加代码时用来定位，不要删！！by hlb
 	
     @Override
@@ -85,106 +69,91 @@ public class AppActivity extends Cocos2dxActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.init(this);
-            PluginWrapper.loadAllPlugins();
-        }
+		
         //SDK_TAG_ONCREATE  脚本自动添加代码时用来定位，不要删！！by hlb
     }
 
     @Override
     protected void onResume() {
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.onResume();
-        }
+		
+		//SDK_TAG_ONRESUME  脚本自动添加代码时用来定位，不要删！！by hlb
         super.onResume();
     }
 
     @Override
     protected void onPause() {
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.onPause();
-        }
+		
+		//SDK_TAG_ONPAUSE  脚本自动添加代码时用来定位，不要删！！by hlb
         super.onPause();
     }
 
     @Override
     protected void onDestroy() {
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.onDestroy();
-        }
+		
+		//SDK_TAG_ONDESTROY  脚本自动添加代码时用来定位，不要删！！by hlb
         super.onDestroy();
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.onActivityResult(requestCode, resultCode, data);
-        }
+	
+		//SDK_TAG_ONACTIVITYRESULT  脚本自动添加代码时用来定位，不要删！！by hlb
         super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
     protected void onNewIntent(Intent intent) {
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.onNewIntent(intent);
-        }
+
+		//SDK_TAG_ONNEWINTENT  脚本自动添加代码时用来定位，不要删！！by hlb
         super.onNewIntent(intent);
     }
 
     @Override
     protected void onStop() {
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.onStop();
-        }
+		
+		//SDK_TAG_ONSTOP  脚本自动添加代码时用来定位，不要删！！by hlb
         super.onStop();
     }
 
     @Override
     protected void onRestart() {
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.onRestart();
-        }
+		
+		//SDK_TAG_ONRESTART  脚本自动添加代码时用来定位，不要删！！by hlb
         super.onRestart();
     }
 
     @Override
     public void onBackPressed() {
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.onBackPressed();
-        }
+		
+		//SDK_TAG_ONBACKPRESSED  脚本自动添加代码时用来定位，不要删！！by hlb
         super.onBackPressed();
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.onConfigurationChanged(newConfig);
-        }
+		
+		//SDK_TAG_ONCONFIGURATION_CHANGED  脚本自动添加代码时用来定位，不要删！！by hlb
         super.onConfigurationChanged(newConfig);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.onRestoreInstanceState(savedInstanceState);
-        }
+		
+		//SDK_TAG_ONRESTORE_INSTANCE_STATE  脚本自动添加代码时用来定位，不要删！！by hlb
         super.onRestoreInstanceState(savedInstanceState);
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.onSaveInstanceState(outState);
-        }
+	
+		//SDK_TAG_ONSAVE_INSTANCE_STATE  脚本自动添加代码时用来定位，不要删！！by hlb
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onStart() {
-        if (ANYSDK_SUPPORT) {
-            PluginWrapper.onStart();
-        }
+		
+		//SDK_TAG_ONSTART  脚本自动添加代码时用来定位，不要删！！by hlb
         super.onStart();
     }
 	public static void isFuncExist(String className, String funcName, int callback) {
