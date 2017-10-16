@@ -65,17 +65,17 @@ def config_AppActivity_java(bRemove):
     ]
 
     #2) 在 AppActivity 类中定义成员变量, 注意appid根据您的情况来修改
-    #   private static final String APP_ID = "wx708e74f728e0e612";
+    #   private static final String APP_ID_WX = "wx708e74f728e0e612";
     #   private static IWXAPI api;
     str_var = [
-        'private static final String APP_ID = "wx708e74f728e0e612";',
+        'private static final String APP_ID_WX = "wx708e74f728e0e612";',
         'private static IWXAPI api;'
     ]
 
     #3) 在onCreate()函数中注册微信添加如下内容
     str_oncreate = [
-        'api = WXAPIFactory.createWXAPI(this, APP_ID);',
-        'api.registerApp(APP_ID);'
+        'api = WXAPIFactory.createWXAPI(this, APP_ID_WX);',
+        'api.registerApp(APP_ID_WX);'
     ]
 
     #4) 在AppActivity 类中添加微信分享函数

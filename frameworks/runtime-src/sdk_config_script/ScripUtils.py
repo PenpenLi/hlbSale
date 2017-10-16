@@ -19,6 +19,19 @@ def writeFile(filePath,all_the_text):
     file_object.write(all_the_text)
     file_object.close()
 
+# 找出该字符串距离行首的字串(内容一般为 '\n\t'之类),一般用于排版缩进
+def getLinePreFix(allText, subStr):
+    preFix = ''
+    pos = allText.find(subStr)
+    if pos > 0:
+        tmp = pos 
+        for i in range(pos-1, 0, -1):
+            if allText[i] == '\n':
+                print('pos, i=', pos, i)
+                preFix = allText[i+1:pos]
+                break;
+
+    return preFix 
 
 # 往 allText 的pos位置插入字符串subStr,并且保持代码缩进
 def insertStr(allText, subStr, pos):
@@ -82,7 +95,6 @@ def modifyContent(allText, content, bRemove):
                 allText = removeStr(allText, v, pos)
                 isChanged = True 
     return allText, isChanged
-
 
 def replaceStr(allText, orgSub, newSub):
     isChanged = False 

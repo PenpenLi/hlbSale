@@ -17,7 +17,9 @@ function LoginView:onEnter()
     local btn = layer:getChildByName("scale_node"):getChildByName("Button_1") 
     local btn2 = layer:getChildByName("scale_node"):getChildByName("Button_2") 
     self:regBtnCallback(btn, handler(self, self.onReqServerList)) 
-    self:regBtnCallback(btn2, handler(self, self.onWeiXinShare)) 
+    -- self:regBtnCallback(btn2, handler(self, self.onWeiXinShare)) 
+    self:regBtnCallback(btn2, handler(self, self.onQQShare)) 
+
     self:addChild(layer)
   end 
 
@@ -70,7 +72,7 @@ function LoginView:onSdkLoginResult(target, data)
 end 
 
 function LoginView:onWeiXinShare()
-  print("LoginView:onTestApi")
+  print("LoginView:onWeiXinShare")
 
   local className="org/cocos2dx/lua/AppActivity"
   local funcName = "onWXShare"
@@ -79,6 +81,24 @@ function LoginView:onWeiXinShare()
       local luaj = require "cocos.cocos2d.luaj"
       local arg="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V" --中间不能有空格,否则调用失败
       local params = {"mytitle", "mydesc", "", "www.hao123.com", true}
+      luaj.callStaticMethod(className, funcName, params, arg) 
+    else 
+      print("function "..funcName .."not exist !!!")
+    end 
+  end 
+  g_gameTool.execJavaFunc(className, funcName, onResult)
+end 
+
+function LoginView:onQQShare()
+  print("LoginView:onQQShare")
+
+  local className="org/cocos2dx/lua/AppActivity"
+  local funcName = "shareAppToQQ"
+  local function onResult(data) 
+    if data == "true" then 
+      local luaj = require "cocos.cocos2d.luaj"
+      local arg="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" --中间不能有空格,否则调用失败
+      local params = {"mytitle", "mydesc", "", ""}
       luaj.callStaticMethod(className, funcName, params, arg) 
     else 
       print("function "..funcName .."not exist !!!")

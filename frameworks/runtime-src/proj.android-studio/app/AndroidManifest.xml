@@ -26,6 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+		<!--TAG_APP_FOR_SDK_END-->		
+		
     </application>
     
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -36,11 +39,12 @@
     
   	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
  	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
-	<!-- AnySDK -->
-	<uses-permission android:name="android.permission.RESTART_PACKAGES" />
-	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
 	
+	<!-- 不要删除以下 TAG 开头的注释,他们用于脚本执行时定位 ！！！！-->
+	
+	<!--TAG_PERMISSION_FOR_SDK_END-->
+	
+
 	
 	
 	

@@ -20,10 +20,10 @@ import ScripUtils
 
 
 
-path_jar = "../../proj.android-studio/app/libs/libPluginProtocol.jar"
+path_jar              = "../../proj.android-studio/app/libs/libPluginProtocol.jar"
 path_AppActivity_java = "../../proj.android-studio/app/src/org/cocos2dx/lua/AppActivity.java"
-path_makefile     = "../../proj.android-studio/app/jni/Android.mk"
-
+path_makefile         = "../../proj.android-studio/app/jni/Android.mk"
+path_manifest         = "../../proj.android-studio/app/AndroidManifest.xml"
 
 
 
@@ -170,14 +170,32 @@ def config_makefile(bRemove):
     if isChanged:
         ScripUtils.writeFile(path_makefile, all_the_text)
 
-#   case4:其他c++和lua代码部分由宏 ANYSDK_SUPPORT 来自动开关，这里暂时不做处理了
+#   case4:修改 AndroidManifest.xml 权限
+def config_manifest(bRemove):
+    str_permission = [
+    '<!-- AnySDK start-->',
+    '<uses-permission android:name="android.permission.RESTART_PACKAGES" />',
+    '<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />'
+    ]
+
+    content = [ 
+        [str_permission,     '<!--TAG_PERMISSION_FOR_SDK_END-->']
+    ] 
+    all_the_text = ScripUtils.readFile(path_manifest)
+
+    all_the_text, isChanged = ScripUtils.modifyContent(all_the_text, content, bRemove)
+    if isChanged:
+        ScripUtils.writeFile(path_manifest, all_the_text)
+
+
+#   case5:其他c++和lua代码部分由宏 ANYSDK_SUPPORT 来自动开关，这里暂时不做处理了
 
 
 def do_configs(bRemove):
     config_jar(bRemove)
     config_AppActivity_java(bRemove)
     config_makefile(bRemove)
-
+    config_manifest(bRemove)
 
 
 def run(argv):	
